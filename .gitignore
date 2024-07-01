@@ -1,3 +1,7 @@
+# Custom
+# Ignores all files with extentions in the build folder, allowing placeholder files to be used but removeing the actual builds
+Builds/**/*.*
+
 # Godot 4+ specific ignores
 .godot/
 
