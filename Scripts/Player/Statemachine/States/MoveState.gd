@@ -1,6 +1,9 @@
 class_name MoveState
 extends PlayerState
 
+func enter(_msg:={}) -> void:
+	player.animated_sprite.play("Run")
+
 func physics_update(delta: float) -> void:
 	# Falling behavior
 	if not player.is_on_floor():

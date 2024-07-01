@@ -199,7 +199,7 @@ shape = SubResource("CircleShape2D_fbg4x")
 z_index = 5
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_ddnw0")
-animation = &"Sneak"
+animation = &"Run"
 autoplay = "Idle"
 
 [node name="StateMachine" type="Node" parent="."]

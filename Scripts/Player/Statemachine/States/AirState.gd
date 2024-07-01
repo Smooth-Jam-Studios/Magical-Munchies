@@ -4,6 +4,7 @@ extends PlayerState
 func enter(msg:={}) -> void:
 	if msg.has("do_jump"):
 		player.velocity.y = -player.JUMP_VELOCITY
+	player.animated_sprite.play("Jump")
 
 func physics_update(delta: float) -> void:
 	
