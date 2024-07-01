@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        platform: [Linux-X11, windows-x64, windwos-x86, WebGL]
+        platform: [Linux-X11] #, windows-x64, windows-x86, WebGL
     steps:
       - uses: actions/checkout@v2
         with:
