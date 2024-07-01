@@ -2,7 +2,7 @@ name: Build Godot Project
 
 on:
   push:
-    branches: ["main", "feature/githubactions"]
+    branches: ["main"]
   pull_request:
     branches: ["main", "dev"]
 
