@@ -164,7 +164,6 @@ position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_ddnw0")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.674556
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_5c4cm")

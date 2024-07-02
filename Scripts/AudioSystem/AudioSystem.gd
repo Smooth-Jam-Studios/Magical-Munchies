@@ -1,18 +1,14 @@
 class_name AudioSystem
 extends Node2D
 
-@export var follownode: Node2D
 @export var Sounds: Array[SoundObject]
 
 func _ready() -> void:
-	# var eventbus: GlobalEventBus = get_node("EventBus")
-	# eventbus.connect("audio_playsound", Callable(self, "playsound"))
-	# eventbus.connect("audio_stopsound", Callable(self, "playsound"))
+	EventBus.connect("audio_playsound", Callable(self, "playsound"))
+	EventBus.connect("audio_stopsound", Callable(self, "playsound"))
+	EventBus.connect("audio_stop_all_sounds", Callable(self, "stop_all_sounds"))
+	EventBus.connect("audio_stop_all_sounds_in_bus", Callable(self, "stop_all_sounds_in_bus"))
 	_update_sounds()
-
-func _process(_delta: float) -> void:
-	if follownode != null:
-		self.position = follownode.position
 
 func _update_sounds() -> void:
 	for sound: SoundObject in Sounds:
@@ -51,3 +47,8 @@ func stopsound(sound_name: String, _fade_duration=0) -> void:
 func stop_all_sounds() -> void:
 	for sound: SoundObject in Sounds:
 		stopsound(sound.clip_name)
+
+func stop_all_sounds_in_bus(type: AudioBus.BusTypes) -> void:
+	for sound: SoundObject in Sounds:
+		if (sound.audio_bus == type):
+			stopsound(sound.clip_name)
