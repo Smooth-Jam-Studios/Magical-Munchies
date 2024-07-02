@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dndhpntnnnosj"]
+[gd_scene load_steps=25 format=3 uid="uid://dndhpntnnnosj"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerActor.gd" id="1_iiw3q"]
 [ext_resource type="Texture2D" uid="uid://cmop7521mralf" path="res://Assets/Sprites/Player/Player-Movement.png" id="2_3s3pf"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05aj4"]
-size = Vector2(8, 11)
+size = Vector2(3.33333, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eaaf6"]
 atlas = ExtResource("2_3s3pf")
@@ -55,6 +55,22 @@ region = Rect2(48, 16, 16, 16)
 atlas = ExtResource("3_60ika")
 region = Rect2(64, 224, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4efyj"]
+atlas = ExtResource("2_3s3pf")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgb55"]
+atlas = ExtResource("2_3s3pf")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sms53"]
+atlas = ExtResource("2_3s3pf")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47v4w"]
+atlas = ExtResource("2_3s3pf")
+region = Rect2(48, 16, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ddnw0"]
 animations = [{
 "frames": [{
@@ -80,7 +96,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 3.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -114,6 +130,23 @@ animations = [{
 "loop": true,
 "name": &"Sneak",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4efyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgb55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sms53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47v4w")
+}],
+"loop": true,
+"name": &"Sprint",
+"speed": 10.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -129,9 +162,9 @@ shape = SubResource("RectangleShape2D_05aj4")
 z_index = 5
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_ddnw0")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.962249
+frame_progress = 0.674556
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_5c4cm")
