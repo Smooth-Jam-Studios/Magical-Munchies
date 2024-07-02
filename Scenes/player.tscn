@@ -1,11 +1,13 @@
-[gd_scene load_steps=31 format=3 uid="uid://dndhpntnnnosj"]
+[gd_scene load_steps=33 format=3 uid="uid://dl2apf72fmv2f"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerActor.gd" id="1_iiw3q"]
 [ext_resource type="Texture2D" uid="uid://bgclkmim7xb81" path="res://Assets/Sprites/knight.png" id="1_jb7w5"]
+[ext_resource type="Resource" uid="uid://xmkh8o7yllsa" path="res://InventoryItems/PlayerInventory.tres" id="2_f4b4x"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/StateMachine.gd" id="3_5c4cm"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/IdleState.gd" id="4_33fco"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/MoveState.gd" id="5_kbtyb"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
+[ext_resource type="PackedScene" uid="uid://brdk6ixr7pxm5" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fbg4x"]
 radius = 5.09902
@@ -190,6 +192,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_iiw3q")
+inv = ExtResource("2_f4b4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
@@ -214,3 +217,9 @@ script = ExtResource("5_kbtyb")
 
 [node name="AirState" type="Node" parent="StateMachine"]
 script = ExtResource("6_xte7u")
+
+[node name="Inv_UI" parent="." instance=ExtResource("7_1ogty")]
+offset_left = -45.0
+offset_top = -93.0
+offset_right = 45.0
+offset_bottom = -28.0

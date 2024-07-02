@@ -9,6 +9,7 @@ var direction: float = 0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
+@export var inv: Inv
 
 func _physics_process(_delta):
 
@@ -19,3 +20,5 @@ func _physics_process(_delta):
 		animated_sprite.flip_h = true
 
 	# move_and_slide()
+func collect(item):
+	inv.Insert(item)

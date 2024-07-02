@@ -1,6 +1,5 @@
 extends Resource
 
-
 class_name Inv
 
 signal update 
@@ -9,7 +8,7 @@ signal update
 
 func Insert (item: InvItem):
 	var itemslots = Slots.filter(func(slot): return slot.item == item)
-	if !itemslots.is.empty():
+	if !itemslots.is_empty():
 		itemslots[0].amount += 1
 	else:
 		var emptyslots = Slots.filter(func(slot): return slot.item == null)
