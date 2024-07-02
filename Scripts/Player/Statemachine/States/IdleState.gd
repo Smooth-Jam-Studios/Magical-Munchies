@@ -19,5 +19,5 @@ func physics_update(_delta: float) -> void:
 		state_machine.change_state("AirState", {do_jump=true})
 	
 	# Move behavior
-	elif Input.is_action_pressed("Move_Left") or Input.is_action_pressed("Move_Right"):
+	elif (Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left") != 0):
 		state_machine.change_state("MoveState")

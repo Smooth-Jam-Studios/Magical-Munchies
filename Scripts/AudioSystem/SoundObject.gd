@@ -3,6 +3,7 @@ extends Resource
 
 @export var clip_name: String
 @export var clip: AudioStream
+@export var audio_bus: AudioBus.BusTypes
 @export var volume_db: float = 0.0
 @export var pitch_scale: float = 1.0
 @export var loop: bool = false
