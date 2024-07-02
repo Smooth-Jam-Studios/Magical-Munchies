@@ -4,6 +4,8 @@ extends Area2D
 
 func _on_body_entered(_body: Node2D) -> void:
 	timer.start()
+	EventBus.stop_all_sounds_in_bus(AudioBus.BusTypes.MUSIC)
+	EventBus.play_sound("PlayerDeath")
 
 func _on_timer_timeout() -> void:
 	get_tree().reload_current_scene()
