@@ -1,16 +1,25 @@
 class_name AirState
 extends PlayerState
 
+@export var use_variable_jump: bool = false
+
 func enter(msg:={}) -> void:
 	if msg.has("do_jump"):
 		player.velocity.y = -player.JUMP_VELOCITY
 	player.animated_sprite.play("Jump")
 
 func physics_update(delta: float) -> void:
-	
+	# Horizontal
 	player.direction = (Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left"))
 	player.velocity.x = player.SPEED * player.direction
-	player.velocity.y += player.gravity * delta
+
+	# Vertical
+	player.velocity.y += player.get_gravity(player.velocity) * delta
+	# Allow variable jump height based on input duration.
+	if Input.is_action_just_released("Jump") and player.velocity.y < 0.0 and use_variable_jump:
+		player.velocity.y = player.JUMP_VELOCITY / 4
+	
+	# Apply movement
 	player.move_and_slide()
 
 	# Landing.
