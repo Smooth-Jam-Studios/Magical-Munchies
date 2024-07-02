@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwxmnwyxo585f"]
+[gd_scene load_steps=5 format=3 uid="uid://dtprgseigxs8"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/PickUp.gd" id="1_wpk1g"]
 [ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="2_nwja4"]
@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1guo4"]
 radius = 11.1803
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="MoonPickup" type="StaticBody2D"]
 script = ExtResource("1_wpk1g")
 item = ExtResource("2_nwja4")
 
@@ -15,10 +15,5 @@ item = ExtResource("2_nwja4")
 texture = ExtResource("3_lqfrs")
 hframes = 8
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1guo4")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

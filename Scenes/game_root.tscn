@@ -1,12 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://3b18rplrixjo"]
+[gd_scene load_steps=16 format=3 uid="uid://cw6pvtjwtyc08"]
 
-[ext_resource type="PackedScene" uid="uid://dl2apf72fmv2f" path="res://Scenes/player.tscn" id="1_mi5pu"]
+[ext_resource type="PackedScene" uid="uid://dndhpntnnnosj" path="res://Scenes/player.tscn" id="1_mi5pu"]
 [ext_resource type="Texture2D" uid="uid://cvh4yyxla63yc" path="res://Assets/Sprites/platforms.png" id="2_dq3qw"]
 [ext_resource type="Texture2D" uid="uid://ci4ymtvj26gqa" path="res://Assets/Sprites/Sprite-0002.png" id="3_6d6mt"]
-[ext_resource type="PackedScene" path="res://Scenes/platform.tscn" id="4_icexa"]
-[ext_resource type="PackedScene" uid="uid://dh2gosjabhf04" path="res://Scenes/EssenceOfRain.tscn" id="6_lq2af"]
-[ext_resource type="PackedScene" uid="uid://cwxmnwyxo585f" path="res://Scenes/Moon.tscn" id="6_n7eac"]
-[ext_resource type="PackedScene" path="res://Scenes/killzone.tscn" id="6_vcf38"]
+[ext_resource type="PackedScene" uid="uid://braxtqgi65a2e" path="res://Scenes/platform.tscn" id="4_icexa"]
+[ext_resource type="PackedScene" uid="uid://bbcorgeggian5" path="res://Scenes/EssenceOfRain.tscn" id="6_lq2af"]
+[ext_resource type="PackedScene" uid="uid://dtprgseigxs8" path="res://Scenes/Moon.tscn" id="6_n7eac"]
+[ext_resource type="PackedScene" uid="uid://cv2ix6oxlrdrq" path="res://Scenes/killzone.tscn" id="6_vcf38"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_it1jt"]
 
@@ -150,11 +150,11 @@ position = Vector2(0, 82)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_fbjm2")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("6_n7eac")]
+[node name="Moon1" parent="." instance=ExtResource("6_n7eac")]
 position = Vector2(83, 20)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("6_n7eac")]
+[node name="Moon2" parent="." instance=ExtResource("6_n7eac")]
 position = Vector2(161, 1)
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("6_lq2af")]
+[node name="EssenceofRain1" parent="." instance=ExtResource("6_lq2af")]
 position = Vector2(45, 21)
