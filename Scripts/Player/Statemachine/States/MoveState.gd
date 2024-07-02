@@ -4,7 +4,7 @@ extends PlayerState
 func enter(_msg:={}) -> void:
 	player.animated_sprite.play("Run")
 
-func physics_update(delta: float) -> void:
+func physics_update(_delta: float) -> void:
 	# Falling behavior
 	if not player.is_on_floor():
 		state_machine.change_state("AirState")
@@ -12,7 +12,6 @@ func physics_update(delta: float) -> void:
 
 	player.direction = (Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left"))
 	player.velocity.x = player.SPEED * player.direction
-	player.velocity.y += player.gravity * delta
 	player.move_and_slide()
 
 	# Jump behavior
