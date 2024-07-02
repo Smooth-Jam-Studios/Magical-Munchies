@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnd8iqitwbdvp"]
+
+[ext_resource type="Script" path="res://Scripts/AudioSystem/AudioSystem.gd" id="1_lid3s"]
+[ext_resource type="AudioStream" uid="uid://dcp1cm0qh8j6q" path="res://Assets/Sound/BFGDivision.mp3" id="2_ghv7a"]
+[ext_resource type="Script" path="res://Scripts/AudioSystem/SoundObject.gd" id="3_pocr2"]
+[ext_resource type="AudioStream" uid="uid://k2avyiwnlbk4" path="res://Assets/Sound/player_death.mp3" id="4_gyvhu"]
+[ext_resource type="AudioStream" uid="uid://cntjd5givfs27" path="res://Assets/Sound/player_jump.mp3" id="5_mfwqc"]
+
+[sub_resource type="Resource" id="Resource_l5q2s"]
+script = ExtResource("3_pocr2")
+clip_name = "CalmAmbient"
+clip = ExtResource("2_ghv7a")
+volume_db = 0.0
+pitch_scale = 1.0
+loop = true
+autoplay = true
+
+[sub_resource type="Resource" id="Resource_lajlv"]
+script = ExtResource("3_pocr2")
+clip_name = "PlayerDeath"
+clip = ExtResource("4_gyvhu")
+volume_db = 0.0
+pitch_scale = 1.0
+loop = false
+autoplay = false
+
+[sub_resource type="Resource" id="Resource_g0raa"]
+script = ExtResource("3_pocr2")
+clip_name = "PlayerJump"
+clip = ExtResource("5_mfwqc")
+volume_db = 0.0
+pitch_scale = 1.0
+loop = false
+autoplay = false
+
+[node name="AudioSystem" type="Node2D"]
+script = ExtResource("1_lid3s")
+Sounds = Array[ExtResource("3_pocr2")]([SubResource("Resource_l5q2s"), SubResource("Resource_lajlv"), SubResource("Resource_g0raa")])

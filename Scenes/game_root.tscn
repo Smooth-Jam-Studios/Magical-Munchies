@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cw6pvtjwtyc08"]
+[gd_scene load_steps=15 format=3 uid="uid://cw6pvtjwtyc08"]
 
 [ext_resource type="PackedScene" uid="uid://dndhpntnnnosj" path="res://Scenes/player.tscn" id="1_mi5pu"]
 [ext_resource type="Texture2D" uid="uid://cvh4yyxla63yc" path="res://Assets/Sprites/platforms.png" id="2_dq3qw"]
+[ext_resource type="PackedScene" uid="uid://dnd8iqitwbdvp" path="res://Scenes/audio_system.tscn" id="2_xhxbr"]
 [ext_resource type="Texture2D" uid="uid://ci4ymtvj26gqa" path="res://Assets/Sprites/Sprite-0002.png" id="3_6d6mt"]
 [ext_resource type="PackedScene" uid="uid://braxtqgi65a2e" path="res://Scenes/platform.tscn" id="4_icexa"]
 [ext_resource type="PackedScene" uid="uid://cv2ix6oxlrdrq" path="res://Scenes/killzone.tscn" id="6_vcf38"]
@@ -106,7 +107,7 @@ _data = {
 [node name="GameRoot" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_mi5pu")]
-position = Vector2(0, 9)
+position = Vector2(0, 8)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -21)
@@ -122,6 +123,9 @@ drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="AudioSystem" parent="Player" instance=ExtResource("2_xhxbr")]
+position = Vector2(0, -8)
 
 [node name="Map" type="Node" parent="."]
 
