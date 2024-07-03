@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3vuavic5m7jl"]
+[gd_scene load_steps=17 format=3 uid="uid://d3vuavic5m7jl"]
 
 [ext_resource type="PackedScene" uid="uid://chd5j2uijiqsk" path="res://Scenes/player.tscn" id="1_mi5pu"]
 [ext_resource type="Texture2D" uid="uid://cvh4yyxla63yc" path="res://Assets/Sprites/platforms.png" id="2_dq3qw"]
 [ext_resource type="Texture2D" uid="uid://ci4ymtvj26gqa" path="res://Assets/Sprites/Sprite-0002.png" id="3_6d6mt"]
-[ext_resource type="PackedScene" path="res://Scenes/platform.tscn" id="4_icexa"]
-[ext_resource type="PackedScene" path="res://Scenes/EssenceOfRain.tscn" id="6_lq2af"]
-[ext_resource type="PackedScene" path="res://Scenes/Moon.tscn" id="6_n7eac"]
-[ext_resource type="PackedScene" path="res://Scenes/killzone.tscn" id="6_vcf38"]
+[ext_resource type="PackedScene" uid="uid://3j2ivcrw8r3t" path="res://Scenes/platform.tscn" id="4_icexa"]
+[ext_resource type="PackedScene" uid="uid://cqrt8yxe5160f" path="res://Scenes/Pickup.tscn" id="6_n7eac"]
+[ext_resource type="PackedScene" uid="uid://cknnis3c2wiuy" path="res://Scenes/killzone.tscn" id="6_vcf38"]
+[ext_resource type="Texture2D" uid="uid://dm6wqasaeg7q0" path="res://Assets/Sprites/Inventory/Essence of rain.png" id="7_v7odm"]
+[ext_resource type="Texture2D" uid="uid://8akf6gkuwb5e" path="res://Assets/Sprites/Inventory/MoonCrystal.png" id="8_6vhai"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_it1jt"]
 
@@ -144,17 +145,28 @@ libraries = {
 }
 autoplay = "Move"
 
-[node name="Killzone" parent="." instance=ExtResource("6_vcf38")]
+[node name="Killzone" parent="Map" instance=ExtResource("6_vcf38")]
 position = Vector2(0, 82)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Killzone"]
 shape = SubResource("WorldBoundaryShape2D_fbjm2")
 
-[node name="Moon1" parent="." instance=ExtResource("6_n7eac")]
-position = Vector2(83, 20)
+[node name="Pickups" type="Node" parent="."]
 
-[node name="Moon2" parent="." instance=ExtResource("6_n7eac")]
-position = Vector2(161, 1)
+[node name="Pickup-ThingyOfRain" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(80, 16)
 
-[node name="EssenceofRain1" parent="." instance=ExtResource("6_lq2af")]
-position = Vector2(45, 21)
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-ThingyOfRain"]
+texture = ExtResource("7_v7odm")
+
+[node name="Pickup-Moon" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(160, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon"]
+texture = ExtResource("8_6vhai")
+
+[node name="Pickup-Moon2" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(336, 24)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon2"]
+texture = ExtResource("8_6vhai")
