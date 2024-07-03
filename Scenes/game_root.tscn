@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3vuavic5m7jl"]
+[gd_scene load_steps=19 format=3 uid="uid://d3vuavic5m7jl"]
 
 [ext_resource type="PackedScene" uid="uid://chd5j2uijiqsk" path="res://Scenes/player.tscn" id="1_mi5pu"]
 [ext_resource type="Texture2D" uid="uid://cvh4yyxla63yc" path="res://Assets/Sprites/platforms.png" id="2_dq3qw"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://3j2ivcrw8r3t" path="res://Scenes/platform.tscn" id="4_icexa"]
 [ext_resource type="PackedScene" uid="uid://cqrt8yxe5160f" path="res://Scenes/Pickup.tscn" id="6_n7eac"]
 [ext_resource type="PackedScene" uid="uid://cknnis3c2wiuy" path="res://Scenes/killzone.tscn" id="6_vcf38"]
+[ext_resource type="Resource" uid="uid://dog0ehkcllgmu" path="res://InventoryItems/EssenceOfRain.tres" id="7_tcxwa"]
 [ext_resource type="Texture2D" uid="uid://dm6wqasaeg7q0" path="res://Assets/Sprites/Inventory/Essence of rain.png" id="7_v7odm"]
 [ext_resource type="Texture2D" uid="uid://8akf6gkuwb5e" path="res://Assets/Sprites/Inventory/MoonCrystal.png" id="8_6vhai"]
+[ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="9_httpg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_it1jt"]
 
@@ -155,18 +157,21 @@ shape = SubResource("WorldBoundaryShape2D_fbjm2")
 
 [node name="Pickup-ThingyOfRain" parent="Pickups" instance=ExtResource("6_n7eac")]
 position = Vector2(80, 16)
+item = ExtResource("7_tcxwa")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-ThingyOfRain"]
 texture = ExtResource("7_v7odm")
 
 [node name="Pickup-Moon" parent="Pickups" instance=ExtResource("6_n7eac")]
 position = Vector2(160, 8)
+item = ExtResource("9_httpg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon"]
 texture = ExtResource("8_6vhai")
 
 [node name="Pickup-Moon2" parent="Pickups" instance=ExtResource("6_n7eac")]
 position = Vector2(336, 24)
+item = ExtResource("9_httpg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon2"]
 texture = ExtResource("8_6vhai")
