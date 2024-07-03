@@ -1,12 +1,14 @@
-[gd_scene load_steps=26 format=3 uid="uid://chd5j2uijiqsk"]
+[gd_scene load_steps=28 format=3 uid="uid://chd5j2uijiqsk"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerActor.gd" id="1_iiw3q"]
 [ext_resource type="Texture2D" uid="uid://cmop7521mralf" path="res://Assets/Sprites/Player/Player-Movement.png" id="2_3s3pf"]
+[ext_resource type="Resource" uid="uid://xmkh8o7yllsa" path="res://InventoryItems/PlayerInventory.tres" id="2_f4b4x"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/StateMachine.gd" id="3_5c4cm"]
 [ext_resource type="Texture2D" uid="uid://bgclkmim7xb81" path="res://Assets/Sprites/Player/knight.png" id="3_60ika"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/IdleState.gd" id="4_33fco"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/MoveState.gd" id="5_kbtyb"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
+[ext_resource type="PackedScene" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
 [ext_resource type="PackedScene" path="res://Scenes/audio_system.tscn" id="8_28c70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05aj4"]
@@ -154,6 +156,7 @@ animations = [{
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
 script = ExtResource("1_iiw3q")
+inv = ExtResource("2_f4b4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -5.5)
@@ -181,3 +184,9 @@ script = ExtResource("5_kbtyb")
 script = ExtResource("6_xte7u")
 
 [node name="AudioSystem" parent="." instance=ExtResource("8_28c70")]
+
+[node name="Inv_UI" parent="." instance=ExtResource("7_1ogty")]
+offset_left = -45.0
+offset_top = -93.0
+offset_right = 45.0
+offset_bottom = -28.0
