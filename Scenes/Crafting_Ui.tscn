@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0j4knfmck6k7"]
+
+[ext_resource type="Texture2D" uid="uid://dknmqj7kti68a" path="res://Assets/Sprites/Inventory/InvBackground-export.png" id="1_ye0vy"]
+[ext_resource type="Texture2D" uid="uid://cgvp2abnjt65s" path="res://Assets/Sprites/Inventory/InvBackgroundSlot.png" id="2_m3ht3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 87.0
+offset_bottom = 57.0
+texture = ExtResource("1_ye0vy")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 7.0
+offset_right = 36.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/CenterContainer"]
+texture = ExtResource("2_m3ht3")
+centered = false
+
+[node name="Panel" type="Panel" parent="NinePatchRect/CenterContainer"]
+layout_mode = 2
+
+[node name="ItemDisplay" type="Sprite2D" parent="NinePatchRect/CenterContainer/Panel"]
+
+[node name="CenterContainer2" type="CenterContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 7.0
+offset_right = 66.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/CenterContainer2"]
+texture = ExtResource("2_m3ht3")
+centered = false
+
+[node name="Panel" type="Panel" parent="NinePatchRect/CenterContainer2"]
+layout_mode = 2
+
+[node name="ItemDisplay" type="Sprite2D" parent="NinePatchRect/CenterContainer2/Panel"]
+
+[node name="CenterContainer3" type="CenterContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 7.0
+offset_right = 66.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/CenterContainer3"]
+position = Vector2(-15, 28)
+texture = ExtResource("2_m3ht3")
+centered = false
+
+[node name="Panel" type="Panel" parent="NinePatchRect/CenterContainer3"]
+layout_mode = 2
+
+[node name="ItemDisplay" type="Sprite2D" parent="NinePatchRect/CenterContainer3/Panel"]
