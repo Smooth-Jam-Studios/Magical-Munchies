@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3vuavic5m7jl"]
+[gd_scene load_steps=28 format=3 uid="uid://d3vuavic5m7jl"]
 
 [ext_resource type="PackedScene" uid="uid://chd5j2uijiqsk" path="res://Scenes/player.tscn" id="1_mi5pu"]
 [ext_resource type="Texture2D" uid="uid://cvh4yyxla63yc" path="res://Assets/Sprites/platforms.png" id="2_dq3qw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dm6wqasaeg7q0" path="res://Assets/Sprites/Inventory/Essence of rain.png" id="7_v7odm"]
 [ext_resource type="Texture2D" uid="uid://8akf6gkuwb5e" path="res://Assets/Sprites/Inventory/MoonCrystal.png" id="8_6vhai"]
 [ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="9_httpg"]
+[ext_resource type="Texture2D" uid="uid://bt4d2pu05imq4" path="res://Assets/Sprites/Glow-sheet.png" id="11_0cktn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_it1jt"]
 
@@ -108,6 +109,63 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fbjm2"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcf5t"]
+atlas = ExtResource("11_0cktn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7kdo"]
+atlas = ExtResource("11_0cktn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wv7g"]
+atlas = ExtResource("11_0cktn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouu3c"]
+atlas = ExtResource("11_0cktn")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn65m"]
+atlas = ExtResource("11_0cktn")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2h44"]
+atlas = ExtResource("11_0cktn")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r77xn"]
+atlas = ExtResource("11_0cktn")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3bll5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcf5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7kdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wv7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouu3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn65m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2h44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r77xn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="GameRoot" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_mi5pu")]
@@ -172,6 +230,18 @@ texture = ExtResource("8_6vhai")
 [node name="Pickup-Moon2" parent="Pickups" instance=ExtResource("6_n7eac")]
 position = Vector2(336, 24)
 item = ExtResource("9_httpg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pickups/Pickup-Moon2"]
+position = Vector2(9, -10)
+sprite_frames = SubResource("SpriteFrames_3bll5")
+autoplay = "default"
+frame_progress = 0.299715
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Pickups/Pickup-Moon2"]
+position = Vector2(-11, -8)
+sprite_frames = SubResource("SpriteFrames_3bll5")
+autoplay = "default"
+frame_progress = 0.113427
 
 [node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon2"]
 texture = ExtResource("8_6vhai")

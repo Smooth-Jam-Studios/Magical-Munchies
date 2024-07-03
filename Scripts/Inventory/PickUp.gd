@@ -3,7 +3,6 @@ extends Area2D
 var player = null 
 
 func _on_body_entered(body):
-	print("I work!")
 	player = body
 	PlayerCollect()
 	await  get_tree().create_timer(0.1).timeout
