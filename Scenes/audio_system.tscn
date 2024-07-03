@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnd8iqitwbdvp"]
+[gd_scene load_steps=9 format=3 uid="uid://dlfcdt8kuthdd"]
 
 [ext_resource type="Script" path="res://Scripts/AudioSystem/AudioSystem.gd" id="1_lid3s"]
 [ext_resource type="AudioStream" uid="uid://dcp1cm0qh8j6q" path="res://Assets/Sound/BFGDivision.mp3" id="2_ghv7a"]

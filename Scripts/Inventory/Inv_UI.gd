@@ -15,7 +15,7 @@ func update_slots():
 	for i in range(min(inv.Slots.size(), slots.size())):
 		slots[i].update(inv.Slots[i])
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("e"):
 		if is_open:
 			close()

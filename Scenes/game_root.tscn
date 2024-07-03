@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d3vuavic5m7jl"]
+[gd_scene load_steps=29 format=3 uid="uid://d3vuavic5m7jl"]
 
 [ext_resource type="PackedScene" uid="uid://chd5j2uijiqsk" path="res://Scenes/player.tscn" id="1_mi5pu"]
 [ext_resource type="Texture2D" uid="uid://cvh4yyxla63yc" path="res://Assets/Sprites/platforms.png" id="2_dq3qw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://8akf6gkuwb5e" path="res://Assets/Sprites/Inventory/MoonCrystal.png" id="8_6vhai"]
 [ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="9_httpg"]
 [ext_resource type="Texture2D" uid="uid://bt4d2pu05imq4" path="res://Assets/Sprites/Glow-sheet.png" id="11_0cktn"]
+[ext_resource type="PackedScene" uid="uid://bjdvfjmjw2vft" path="res://Scenes/player_behaviour.tscn" id="12_eyvgd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_it1jt"]
 
@@ -245,3 +246,5 @@ frame_progress = 0.113427
 
 [node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon2"]
 texture = ExtResource("8_6vhai")
+
+[node name="BehaviourTree" parent="." instance=ExtResource("12_eyvgd")]

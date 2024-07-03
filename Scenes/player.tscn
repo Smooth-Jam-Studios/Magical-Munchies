@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/MoveState.gd" id="5_kbtyb"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
 [ext_resource type="PackedScene" uid="uid://cflf8us0xop6g" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
-[ext_resource type="PackedScene" path="res://Scenes/audio_system.tscn" id="8_28c70"]
+[ext_resource type="PackedScene" uid="uid://dlfcdt8kuthdd" path="res://Scenes/audio_system.tscn" id="8_28c70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05aj4"]
 size = Vector2(3.33333, 11)

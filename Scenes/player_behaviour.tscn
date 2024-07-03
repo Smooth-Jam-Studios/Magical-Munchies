@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjdvfjmjw2vft"]
+
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/BehaviourTree.gd" id="1_lmmy3"]
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/Nodes/Composites/SelectorNode.gd" id="2_g3n3m"]
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/Nodes/Composites/SequenceNode.gd" id="3_ox3bq"]
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/Nodes/Tasks/TaskPlayMusic.gd" id="6_3v820"]
+
+[node name="BehaviourTree" type="Node"]
+script = ExtResource("1_lmmy3")
+
+[node name="SelectorNode" type="Node" parent="."]
+script = ExtResource("2_g3n3m")
+
+[node name="SequenceNode" type="Node" parent="SelectorNode"]
+script = ExtResource("3_ox3bq")
+
+[node name="TaskPlayMusic" type="Node" parent="SelectorNode/SequenceNode"]
+script = ExtResource("6_3v820")

@@ -14,7 +14,7 @@ func _update_sounds() -> void:
 	for sound: SoundObject in Sounds:
 		# Ensure the sound has a valid name
 		if (sound.clip_name.is_empty() and sound.clip != null):
-            # If someone forgot to set the clip name, set it to the file name
+			# If someone forgot to set the clip name, set it to the file name
 			sound.clip_name = sound.clip.resource_path.get_file().get_basename()
 
 		# # Load settings into the AudioStreamPlayer
