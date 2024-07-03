@@ -2,6 +2,7 @@
 # Ignores all files with extentions in the build folder, allowing placeholder files to be used but removeing the actual builds
 Builds/**/*.*
 !Builds/**/.gdignore
+.vscode/settings.json
 
 # Godot 4+ specific ignores
 .godot/
