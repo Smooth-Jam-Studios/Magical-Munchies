@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3pg117p1skcc"]
+[gd_scene load_steps=5 format=3 uid="uid://d3pg117p1skcc"]
 
 [ext_resource type="PackedScene" uid="uid://oymcjqqyy1qf" path="res://Scenes/inv_ui.tscn" id="1_6ruq8"]
+[ext_resource type="Script" path="res://Scripts/ReturnToLevel.gd" id="1_gcrk7"]
 [ext_resource type="PackedScene" uid="uid://b0j4knfmck6k7" path="res://Scenes/Crafting_Ui.tscn" id="2_cq6e3"]
 [ext_resource type="Script" path="res://Scripts/UpdateInvMinigame.gd" id="2_p4e50"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gcrk7")
 
 [node name="Inv_UI" parent="." instance=ExtResource("1_6ruq8")]
 layout_mode = 1

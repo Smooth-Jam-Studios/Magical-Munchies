@@ -1,15 +1,11 @@
-extends Panel
+extends Button
 
-@onready var ItemVisual: Sprite2D = $CenterContainer/Panel/ItemDisplay
-@onready var amount_text: Label = $CenterContainer/Panel/Label
+@onready var container: CenterContainer = $CenterContainer
+@onready var background: Sprite2D = $Sprite2D
 
-func update(slot: InvSlot):
-	if !slot.item:
-		ItemVisual.visible = false
-		amount_text.visible = false
-	else:
-		ItemVisual.visible = true
-		ItemVisual.texture = slot.item.texture
-		if slot.amount > 1: 
-			amount_text.visible = true
-		amount_text.text = str(slot.amount)
+var itemStackGui: ItemStackGui
+
+func insert(isg: ItemStackGui):
+	itemStackGui = isg 
+	background.frame= 1
+	container.add_child(itemStackGui)

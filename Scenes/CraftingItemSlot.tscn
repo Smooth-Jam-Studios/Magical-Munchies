@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://27ke6rjvkn4c"]
+
+[ext_resource type="Texture2D" uid="uid://cgvp2abnjt65s" path="res://Assets/Sprites/Inventory/InvBackgroundSlot.png" id="1_diijs"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_diijs")

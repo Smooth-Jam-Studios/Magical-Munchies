@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0j4knfmck6k7"]
+[gd_scene load_steps=4 format=3 uid="uid://b0j4knfmck6k7"]
 
 [ext_resource type="Texture2D" uid="uid://dknmqj7kti68a" path="res://Assets/Sprites/Inventory/InvBackground-export.png" id="1_ye0vy"]
 [ext_resource type="Texture2D" uid="uid://cgvp2abnjt65s" path="res://Assets/Sprites/Inventory/InvBackgroundSlot.png" id="2_m3ht3"]
+[ext_resource type="Script" path="res://Scripts/CraftItemSlot.gd" id="3_4mf4q"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -32,6 +33,7 @@ offset_bottom = 23.0
 [node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/CenterContainer"]
 texture = ExtResource("2_m3ht3")
 centered = false
+script = ExtResource("3_4mf4q")
 
 [node name="Panel" type="Panel" parent="NinePatchRect/CenterContainer"]
 layout_mode = 2
