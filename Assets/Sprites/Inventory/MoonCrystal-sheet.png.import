@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgclkmim7xb81"
-path="res://.godot/imported/knight.png-d12f0fc68905d26de6ad5711b0d3ea67.ctex"
+uid="uid://c0ujqqsac3uq3"
+path="res://.godot/imported/MoonCrystal-sheet.png-c94093cef1753b590ef3bac4c48d5337.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Player/knight.png"
-dest_files=["res://.godot/imported/knight.png-d12f0fc68905d26de6ad5711b0d3ea67.ctex"]
+source_file="res://Assets/Sprites/Inventory/MoonCrystal-sheet.png"
+dest_files=["res://.godot/imported/MoonCrystal-sheet.png-c94093cef1753b590ef3bac4c48d5337.ctex"]
 
 [params]
 
