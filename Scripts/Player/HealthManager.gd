@@ -1,23 +1,22 @@
 class_name HealthManager
 
-var health: int = 3;
+@export var max_health: int = 3;
+var health: int
+signal health_changed(health: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	health = max_health;
 
 func takeDamage():
 	if health > 0:
 		health = health - 1;
+	health_changed.emit(health);
 
 func heal():
-	if health < 3:
+	if health < max_health:
 		health = health + 1;
+	health_changed.emit(health);
 
 func getHealth():
 	return health;
