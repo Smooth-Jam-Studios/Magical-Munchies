@@ -32,11 +32,13 @@ func get_gravity(_velocity: Vector2):
 		return FALL_GRAVITY
 
 func set_speed_modifier(modifier: float):
-	if modifier < 0.2:
-		modifier = 0.2
+	# Cheap way to prvent moving
+	# if modifier < 0.2:
+	# 	modifier = 0.2
 	speed_modifier = modifier
 
 func set_jump_modifier(modifier: float):
-	if modifier < 0.2:
-		modifier = 0.2
+	# Cheap way to prvent jumping
+	# if modifier < 0.2:
+	# 	modifier = 0.2
 	jump_modifier = modifier

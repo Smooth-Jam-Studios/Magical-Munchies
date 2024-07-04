@@ -14,4 +14,4 @@ func _process(delta):
         effect.on_deactivate(get_parent())
         queue_free()
         return
-    effect._update(self)
+    effect._update(self, delta)

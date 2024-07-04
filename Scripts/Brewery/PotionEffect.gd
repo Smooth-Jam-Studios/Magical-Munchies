@@ -6,8 +6,8 @@ extends Resource
 func on_activate(_caller: Node):
     print("Potion Effect Activated")
 
-func _update(_caller: Node):
+func _update(_caller: Node, _delta: float):
     pass
-    
+
 func on_deactivate(_caller: Node):
     print("Potion Effect Deactivated")
