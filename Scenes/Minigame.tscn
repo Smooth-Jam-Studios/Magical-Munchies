@@ -1,39 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3pg117p1skcc"]
+[gd_scene load_steps=6 format=3 uid="uid://d3pg117p1skcc"]
 
-[ext_resource type="PackedScene" uid="uid://oymcjqqyy1qf" path="res://Scenes/inv_ui.tscn" id="1_6ruq8"]
-[ext_resource type="Script" path="res://Scripts/ReturnToLevel.gd" id="1_gcrk7"]
-[ext_resource type="Script" path="res://Scripts/UpdateInvMinigame.gd" id="2_p4e50"]
-[ext_resource type="PackedScene" uid="uid://b0j4knfmck6k7" path="res://Scenes/Crafting_Ui.tscn" id="4_7bsfh"]
+[ext_resource type="Script" path="res://Scripts/global.gd" id="1_7t1ni"]
+[ext_resource type="Resource" uid="uid://dvnwf7amnrcaa" path="res://InventoryItems/new_test_inv.tres" id="2_xvbkq"]
+[ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/InventoryInterface.gd" id="3_1nx0n"]
+[ext_resource type="PackedScene" uid="uid://c2b2s1883raf4" path="res://Scenes/NewInventory/inventory.tscn" id="4_jb8xx"]
+[ext_resource type="PackedScene" uid="uid://c4vse0up8banw" path="res://Scenes/NewInventory/slot.tscn" id="5_h8ajb"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Node2D"]
+
+[node name="ClassJankyInventoryLoader" type="Node" parent="."]
+script = ExtResource("1_7t1ni")
+inventory_data = ExtResource("2_xvbkq")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gcrk7")
+script = ExtResource("3_1nx0n")
+metadata/_edit_use_anchors_ = true
 
-[node name="Inv_UI" parent="." instance=ExtResource("1_6ruq8")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -196.0
-offset_top = -275.0
-offset_right = -105.0
-offset_bottom = -152.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(4, 4)
-script = ExtResource("2_p4e50")
+[node name="Inventory" parent="UI/InventoryInterface" instance=ExtResource("4_jb8xx")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Control" parent="." instance=ExtResource("4_7bsfh")]
-layout_mode = 1
-offset_left = 389.0
-offset_top = 307.0
-offset_right = -674.0
-offset_bottom = -284.0
-scale = Vector2(4, 4)
+[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("5_h8ajb")]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+metadata/_edit_use_anchors_ = true

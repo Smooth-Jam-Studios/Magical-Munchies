@@ -1,20 +1,16 @@
-[gd_scene load_steps=24 format=3 uid="uid://b7r4i5poe4ehc"]
+[gd_scene load_steps=20 format=3 uid="uid://b7r4i5poe4ehc"]
 
 [ext_resource type="Script" path="res://Scripts/game_root.gd" id="1_5mdjl"]
 [ext_resource type="PackedScene" uid="uid://dndhpntnnnosj" path="res://Scenes/player.tscn" id="1_mi5pu"]
 [ext_resource type="Texture2D" uid="uid://cvh4yyxla63yc" path="res://Assets/Sprites/platforms.png" id="2_dq3qw"]
 [ext_resource type="Texture2D" uid="uid://ci4ymtvj26gqa" path="res://Assets/Sprites/Sprite-0002.png" id="3_6d6mt"]
 [ext_resource type="PackedScene" uid="uid://3j2ivcrw8r3t" path="res://Scenes/platform.tscn" id="4_icexa"]
-[ext_resource type="PackedScene" uid="uid://cqrt8yxe5160f" path="res://Scenes/Pickup.tscn" id="6_n7eac"]
 [ext_resource type="PackedScene" uid="uid://cknnis3c2wiuy" path="res://Scenes/killzone.tscn" id="6_vcf38"]
-[ext_resource type="Resource" uid="uid://dog0ehkcllgmu" path="res://InventoryItems/EssenceOfRain.tres" id="7_tcxwa"]
-[ext_resource type="Texture2D" uid="uid://dm6wqasaeg7q0" path="res://Assets/Sprites/Inventory/Essence of rain.png" id="7_v7odm"]
-[ext_resource type="Texture2D" uid="uid://8akf6gkuwb5e" path="res://Assets/Sprites/Inventory/MoonCrystal.png" id="8_6vhai"]
-[ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="9_httpg"]
 [ext_resource type="PackedScene" uid="uid://jkx0fhj63lnt" path="res://Scenes/StartMinigame.tscn" id="11_1j6fi"]
 [ext_resource type="PackedScene" uid="uid://c2b2s1883raf4" path="res://Scenes/NewInventory/inventory.tscn" id="13_7qqrs"]
 [ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/InventoryInterface.gd" id="13_tc6y2"]
 [ext_resource type="PackedScene" uid="uid://c4vse0up8banw" path="res://Scenes/NewInventory/slot.tscn" id="15_0ky1n"]
+[ext_resource type="PackedScene" uid="uid://by20kpchaga3r" path="res://Scenes/NewInventory/pick_up.tscn" id="16_11qfe"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_it1jt"]
 
@@ -161,26 +157,11 @@ shape = SubResource("WorldBoundaryShape2D_fbjm2")
 
 [node name="Pickups" type="Node" parent="."]
 
-[node name="Pickup-ThingyOfRain" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(80, 16)
-item = ExtResource("7_tcxwa")
+[node name="PickUp" parent="Pickups" instance=ExtResource("16_11qfe")]
+position = Vector2(79, 21)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-ThingyOfRain"]
-texture = ExtResource("7_v7odm")
-
-[node name="Pickup-Moon" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(160, 8)
-item = ExtResource("9_httpg")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon"]
-texture = ExtResource("8_6vhai")
-
-[node name="Pickup-Moon2" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(336, 24)
-item = ExtResource("9_httpg")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon2"]
-texture = ExtResource("8_6vhai")
+[node name="PickUp2" parent="Pickups" instance=ExtResource("16_11qfe")]
+position = Vector2(288, -76)
 
 [node name="Area2D" parent="." instance=ExtResource("11_1j6fi")]
 position = Vector2(-97, 24)
@@ -188,7 +169,6 @@ position = Vector2(-97, 24)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="InventoryInterface" type="Control" parent="UI"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -211,3 +191,4 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
+metadata/_edit_use_anchors_ = true

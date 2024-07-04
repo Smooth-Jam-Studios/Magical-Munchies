@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://by20kpchaga3r"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/pick_up.gd" id="1_d2y86"]
+[ext_resource type="Texture2D" uid="uid://8akf6gkuwb5e" path="res://Assets/Sprites/Inventory/MoonCrystal.png" id="1_rbcrj"]
+[ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="2_wtjgo"]
+[ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/InventorySlot.gd" id="3_cq7ug"]
+
+[sub_resource type="Resource" id="Resource_13k7k"]
+script = ExtResource("3_cq7ug")
+item_data = ExtResource("2_wtjgo")
+quantity = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fnhn1"]
+
+[node name="PickUp" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_d2y86")
+slot_data = SubResource("Resource_13k7k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rbcrj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fnhn1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,3 +1,6 @@
-# extends Node
+extends Node
 
-# var is_dragging: bool = false
+class_name ClassJankyInventoryLoader
+
+@export var inventory_data: InvData
+
