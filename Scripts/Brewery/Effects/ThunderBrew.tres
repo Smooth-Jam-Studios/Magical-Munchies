@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="Thunderbrew" load_steps=2 format=3 uid="uid://cn2ixxrtvc45e"]
+
+[ext_resource type="Script" path="res://Scripts/Brewery/Effects/Thunderbrew.gd" id="1_10tmb"]
+
+[resource]
+script = ExtResource("1_10tmb")

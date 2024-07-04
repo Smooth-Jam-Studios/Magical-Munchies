@@ -11,7 +11,7 @@ func physics_update(_delta: float) -> void:
 		return
 
 	player.direction = (Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left"))
-	player.velocity.x = player.SPEED * player.direction
+	player.velocity.x = player.SPEED * player.speed_modifier * player.direction
 	player.move_and_slide()
 
 	# Jump behavior
