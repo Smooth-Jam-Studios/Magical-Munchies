@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4t8ef116h0ih"]
+[gd_scene load_steps=12 format=3 uid="uid://dnjxffvtya4em"]
 
-[ext_resource type="PackedScene" uid="uid://dndhpntnnnosj" path="res://Scenes/player.tscn" id="1_iggsl"]
+[ext_resource type="PackedScene" uid="uid://chd5j2uijiqsk" path="res://Scenes/player.tscn" id="1_iggsl"]
 [ext_resource type="Texture2D" uid="uid://cvh4yyxla63yc" path="res://Assets/Sprites/platforms.png" id="2_2awmg"]
 [ext_resource type="Texture2D" uid="uid://ci4ymtvj26gqa" path="res://Assets/Sprites/Sprite-0002.png" id="4_ck35w"]
-[ext_resource type="PackedScene" uid="uid://cv2ix6oxlrdrq" path="res://Scenes/killzone.tscn" id="5_f377b"]
+[ext_resource type="PackedScene" uid="uid://cknnis3c2wiuy" path="res://Scenes/killzone.tscn" id="5_f377b"]
 [ext_resource type="Texture2D" uid="uid://vjydgv8monp3" path="res://Assets/Sprites/tileset v3.png" id="5_g75ui"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_it1jt"]
