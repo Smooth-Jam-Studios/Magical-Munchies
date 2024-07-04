@@ -24,3 +24,12 @@ func clear():
 	update.emit()
 
 #Add to player later
+
+func removeItemAtIndex(index: int):
+	Slots[index] = InvSlot.new()
+
+func insertSlot(index:int, inventorySlot: InvSlot):
+	var oldIndex: int = Slots.find(InvSlot)
+	removeItemAtIndex(oldIndex)
+
+	Slots[index] = inventorySlot

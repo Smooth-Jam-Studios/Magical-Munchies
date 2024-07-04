@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://b7r4i5poe4ehc"]
+[gd_scene load_steps=24 format=3 uid="uid://b7r4i5poe4ehc"]
 
+[ext_resource type="Script" path="res://Scripts/game_root.gd" id="1_5mdjl"]
 [ext_resource type="PackedScene" uid="uid://dndhpntnnnosj" path="res://Scenes/player.tscn" id="1_mi5pu"]
 [ext_resource type="Texture2D" uid="uid://cvh4yyxla63yc" path="res://Assets/Sprites/platforms.png" id="2_dq3qw"]
 [ext_resource type="Texture2D" uid="uid://ci4ymtvj26gqa" path="res://Assets/Sprites/Sprite-0002.png" id="3_6d6mt"]
@@ -11,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://8akf6gkuwb5e" path="res://Assets/Sprites/Inventory/MoonCrystal.png" id="8_6vhai"]
 [ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="9_httpg"]
 [ext_resource type="PackedScene" uid="uid://jkx0fhj63lnt" path="res://Scenes/StartMinigame.tscn" id="11_1j6fi"]
+[ext_resource type="PackedScene" uid="uid://c2b2s1883raf4" path="res://Scenes/NewInventory/inventory.tscn" id="13_7qqrs"]
+[ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/InventoryInterface.gd" id="13_tc6y2"]
+[ext_resource type="PackedScene" uid="uid://c4vse0up8banw" path="res://Scenes/NewInventory/slot.tscn" id="15_0ky1n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_it1jt"]
 
@@ -110,6 +114,7 @@ _data = {
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fbjm2"]
 
 [node name="GameRoot" type="Node2D"]
+script = ExtResource("1_5mdjl")
 
 [node name="Player" parent="." instance=ExtResource("1_mi5pu")]
 position = Vector2(0, 8)
@@ -179,3 +184,30 @@ texture = ExtResource("8_6vhai")
 
 [node name="Area2D" parent="." instance=ExtResource("11_1j6fi")]
 position = Vector2(-97, 24)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_tc6y2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Inventory" parent="UI/InventoryInterface" instance=ExtResource("13_7qqrs")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+metadata/_edit_use_anchors_ = true
+
+[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("15_0ky1n")]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0

@@ -12,5 +12,5 @@ func _on_body_entered(body):
 
 func _process(delta):
 	if Input.is_action_just_pressed("f") && InRange:
-		get_tree().change_scene_to_file("res://Scenes/Minigame.tscn")
+		get_tree().change_scene_to_file("res://Scenes/newMinigame.tscn")
 

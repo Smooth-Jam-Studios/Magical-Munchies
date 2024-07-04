@@ -7,11 +7,18 @@ extends Control
 
 var is_open = false
 
+
 func _ready():
+	connectSlots()
 	inv.update.connect(update_slots)
 	update_slots()
 	close()
 
+
+func connectSlots():
+	for i in range(slots.size()):
+		var slot = slots[i]
+		slot.index = i
 
 
 func update_slots():
@@ -36,7 +43,6 @@ func _process(delta):
 		else:
 			open()
 
-
 func open():
 	visible = true 
 	is_open = true 
@@ -44,4 +50,5 @@ func open():
 func close():
 	visible = false
 	is_open = false
+
 

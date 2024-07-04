@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0j4knfmck6k7"]
+[gd_scene load_steps=3 format=3 uid="uid://b0j4knfmck6k7"]
 
 [ext_resource type="Texture2D" uid="uid://dknmqj7kti68a" path="res://Assets/Sprites/Inventory/InvBackground-export.png" id="1_ye0vy"]
-[ext_resource type="Texture2D" uid="uid://cgvp2abnjt65s" path="res://Assets/Sprites/Inventory/InvBackgroundSlot.png" id="2_m3ht3"]
-[ext_resource type="Script" path="res://Scripts/CraftItemSlot.gd" id="3_4mf4q"]
+[ext_resource type="PackedScene" uid="uid://d1kyc1u8whwmf" path="res://Scenes/inv_ui_slot.tscn" id="3_m6e42"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -22,55 +21,12 @@ patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect"]
-custom_minimum_size = Vector2(16, 16)
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 7.0
 offset_right = 36.0
 offset_bottom = 23.0
 
-[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/CenterContainer"]
-texture = ExtResource("2_m3ht3")
-centered = false
-script = ExtResource("3_4mf4q")
-
-[node name="Panel" type="Panel" parent="NinePatchRect/CenterContainer"]
+[node name="Inv_Ui_Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m6e42")]
 layout_mode = 2
-
-[node name="ItemDisplay" type="Sprite2D" parent="NinePatchRect/CenterContainer/Panel"]
-
-[node name="CenterContainer2" type="CenterContainer" parent="NinePatchRect"]
-custom_minimum_size = Vector2(16, 16)
-layout_mode = 0
-offset_left = 50.0
-offset_top = 7.0
-offset_right = 66.0
-offset_bottom = 23.0
-
-[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/CenterContainer2"]
-texture = ExtResource("2_m3ht3")
-centered = false
-
-[node name="Panel" type="Panel" parent="NinePatchRect/CenterContainer2"]
-layout_mode = 2
-
-[node name="ItemDisplay" type="Sprite2D" parent="NinePatchRect/CenterContainer2/Panel"]
-
-[node name="CenterContainer3" type="CenterContainer" parent="NinePatchRect"]
-custom_minimum_size = Vector2(16, 16)
-layout_mode = 0
-offset_left = 50.0
-offset_top = 7.0
-offset_right = 66.0
-offset_bottom = 23.0
-
-[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/CenterContainer3"]
-position = Vector2(-15, 28)
-texture = ExtResource("2_m3ht3")
-centered = false
-
-[node name="Panel" type="Panel" parent="NinePatchRect/CenterContainer3"]
-layout_mode = 2
-
-[node name="ItemDisplay" type="Sprite2D" parent="NinePatchRect/CenterContainer3/Panel"]

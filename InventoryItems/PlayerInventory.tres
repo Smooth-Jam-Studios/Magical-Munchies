@@ -1,56 +1,7 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=15 format=3 uid="uid://xmkh8o7yllsa"]
+[gd_resource type="Resource" script_class="Inv" load_steps=2 format=3 uid="uid://xmkh8o7yllsa"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory/InventorySlot.gd" id="1_mntem"]
 [ext_resource type="Script" path="res://Scripts/Inventory/Inventory.gd" id="2_f3nqc"]
-
-[sub_resource type="Resource" id="Resource_84ljv"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_4xggn"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_rdhqc"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_ktiq8"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_lb3v1"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_igfsp"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_5b742"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_b3fnr"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_xmgc4"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_6pa3d"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_u1jnf"]
-script = ExtResource("1_mntem")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_foo7i"]
-script = ExtResource("1_mntem")
-amount = 0
 
 [resource]
 script = ExtResource("2_f3nqc")
-Slots = Array[ExtResource("1_mntem")]([SubResource("Resource_84ljv"), SubResource("Resource_4xggn"), SubResource("Resource_rdhqc"), SubResource("Resource_ktiq8"), SubResource("Resource_lb3v1"), SubResource("Resource_igfsp"), SubResource("Resource_5b742"), SubResource("Resource_b3fnr"), SubResource("Resource_xmgc4"), SubResource("Resource_6pa3d"), SubResource("Resource_u1jnf"), SubResource("Resource_foo7i")])
+Slots = Array[Resource("res://Scripts/Inventory/NewInventory/InventorySlot.gd")]([])
