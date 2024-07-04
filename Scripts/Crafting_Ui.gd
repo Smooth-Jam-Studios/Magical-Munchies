@@ -1,14 +1,16 @@
 extends Area2D
-var player = null 
+var InRange: bool  = false  
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _on_body_entered(body):
-	player = body
-	switch()
+	print("I wodont worrk!")
+	InRange = true
 
-	if Input.is_action_just_pressed("esc"):
-		get_tree().change_scene_to_file("res://Scenes/game_root.tscn")
 
-func switch():
-	if Input.is_action_just_pressed("f"):
+
+
+func _process(delta):
+	if Input.is_action_just_pressed("f") && InRange:
 		get_tree().change_scene_to_file("res://Scenes/Minigame.tscn")
+
