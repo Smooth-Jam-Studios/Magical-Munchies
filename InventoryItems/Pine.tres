@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dlft20141hywg"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/InventoryItem.gd" id="1_qbksq"]
+[ext_resource type="Texture2D" uid="uid://bghmxryqiarxg" path="res://Assets/Sprites/Inventory/enchanted pine needle.png" id="2_acy3l"]
+
+[resource]
+script = ExtResource("1_qbksq")
+name = "Pine"
+texture = ExtResource("2_acy3l")
