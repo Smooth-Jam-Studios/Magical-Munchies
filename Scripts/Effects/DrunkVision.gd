@@ -1,17 +1,20 @@
-extends Camera2D
+extends AnimationPlayer
 
 @onready var anim
+@onready var blurry
 
-var play: bool = false
+var playing: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	anim = $AnimationPlayer
+	anim = self
+	blurry = $blurryvision
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not play:
+	if not playing: # set better check for when drunk is activated
 		if anim:
+			blurry.visible = true
 			anim.play("Drunk")
-			play = true;
+			playing = true;
