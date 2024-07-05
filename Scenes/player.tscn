@@ -1,14 +1,25 @@
-[gd_scene load_steps=27 format=3 uid="uid://chd5j2uijiqsk"]
+[gd_scene load_steps=39 format=3 uid="uid://chd5j2uijiqsk"]
 
+[ext_resource type="Script" path="res://Scripts/Brewery/PotionNode.gd" id="1_esuby"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerActor.gd" id="1_iiw3q"]
 [ext_resource type="Texture2D" uid="uid://cmop7521mralf" path="res://Assets/Sprites/Player/Player-Movement.png" id="2_3s3pf"]
-[ext_resource type="Resource" uid="uid://xmkh8o7yllsa" path="res://InventoryItems/PlayerInventory.tres" id="2_f4b4x"]
+[ext_resource type="Script" path="res://Scripts/Inventory/Inventory.gd" id="2_gb18q"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/StateMachine.gd" id="3_5c4cm"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/IdleState.gd" id="4_33fco"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/MoveState.gd" id="5_kbtyb"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
 [ext_resource type="PackedScene" uid="uid://cflf8us0xop6g" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
 [ext_resource type="PackedScene" uid="uid://dnd8iqitwbdvp" path="res://Scenes/audio_system.tscn" id="8_28c70"]
+[ext_resource type="Resource" uid="uid://cn2ixxrtvc45e" path="res://Scripts/Brewery/Effects/ThunderBrew.tres" id="9_il78h"]
+[ext_resource type="Resource" uid="uid://bacrn8t1mpb6n" path="res://Scripts/Brewery/Effects/PotionEffect.tres" id="10_245dm"]
+[ext_resource type="Resource" uid="uid://dbutej2wale0n" path="res://Scripts/Brewery/Effects/Liquid_Stone.tres" id="13_xatk6"]
+[ext_resource type="Script" path="res://Scripts/Effects/LimitedVision.gd" id="14_1vnu4"]
+[ext_resource type="Script" path="res://Scripts/Player/HealthManager.gd" id="14_ag4fv"]
+[ext_resource type="Texture2D" uid="uid://fher4dstuea7" path="res://Assets/Sprites/Vision.png" id="15_n3wv8"]
+
+[sub_resource type="Resource" id="Resource_1v780"]
+script = ExtResource("2_gb18q")
+Slots = Array[Resource("res://Scripts/Inventory/InventorySlot.gd")]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05aj4"]
 size = Vector2(3.33333, 11)
@@ -53,7 +64,10 @@ region = Rect2(32, 16, 16, 16)
 atlas = ExtResource("2_3s3pf")
 region = Rect2(48, 16, 16, 16)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_03l2y"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0mnbv"]
+atlas = SubResource("CompressedTexture2D_03l2y")
 region = Rect2(64, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4efyj"]
@@ -150,19 +164,82 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
-scale = Vector2(1.5, 1.5)
+[sub_resource type="Animation" id="Animation_8613t"]
+resource_name = "Drunk"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Map/AnimationPlayer/blurryvision:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.662745), Color(1, 1, 1, 0.156863), Color(1, 1, 1, 0.662745), Color(1, 1, 1, 0.156863), Color(1, 1, 1, 0.662745)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Map/AnimationPlayer/blurryvision:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_j7jin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Map/AnimationPlayer/blurryvision:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.431373)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Map/AnimationPlayer/blurryvision:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xmsxj"]
+_data = {
+"Drunk": SubResource("Animation_8613t"),
+"RESET": SubResource("Animation_j7jin")
+}
+
+[node name="PlayerActor" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_iiw3q")
-inv = ExtResource("2_f4b4x")
+inv = SubResource("Resource_1v780")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -5.5)
+position = Vector2(1.5, -8.25)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_05aj4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
-position = Vector2(0, -8)
+position = Vector2(0, -12)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ddnw0")
 animation = &"Idle"
 autoplay = "Idle"
@@ -182,9 +259,57 @@ script = ExtResource("5_kbtyb")
 script = ExtResource("6_xte7u")
 
 [node name="AudioSystem" parent="." instance=ExtResource("8_28c70")]
+scale = Vector2(1.5, 1.5)
 
 [node name="Inv_UI" parent="." instance=ExtResource("7_1ogty")]
-offset_left = -45.0
-offset_top = -93.0
-offset_right = 45.0
-offset_bottom = -28.0
+offset_left = -67.5
+offset_top = -139.5
+offset_right = 22.5
+offset_bottom = -74.5
+metadata/_edit_use_anchors_ = true
+
+[node name="PotionNode" type="Node" parent="."]
+script = ExtResource("1_esuby")
+effects = Array[Resource("res://Scripts/Brewery/PotionEffect.gd")]([ExtResource("9_il78h"), ExtResource("10_245dm"), ExtResource("13_xatk6")])
+
+[node name="HealthManager" type="Node" parent="."]
+script = ExtResource("14_ag4fv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -21)
+zoom = Vector2(4, 4)
+process_callback = 0
+limit_bottom = 130
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("14_1vnu4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+root_node = NodePath("../../Player/Camera2D")
+libraries = {
+"": SubResource("AnimationLibrary_xmsxj")
+}
+
+[node name="limitedvision" type="TextureRect" parent="Camera2D"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.862745)
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -115.0
+offset_right = 200.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_n3wv8")
+expand_mode = 5
