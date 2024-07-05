@@ -1,6 +1,7 @@
 class_name PotionContainer
 extends Node
 
+
 var effect: PotionEffect
 var duration: float = 10
 var time_active: float = 0

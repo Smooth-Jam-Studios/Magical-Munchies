@@ -1,8 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://d3vuavic5m7jl"]
+[gd_scene load_steps=24 format=3 uid="uid://d3vuavic5m7jl"]
 
 [ext_resource type="PackedScene" uid="uid://chd5j2uijiqsk" path="res://Scenes/player.tscn" id="1_mi5pu"]
-[ext_resource type="Texture2D" uid="uid://fher4dstuea7" path="res://Assets/Sprites/Vision.png" id="2_5piom"]
-[ext_resource type="Script" path="res://Scripts/Effects/LimitedVision.gd" id="2_85m6g"]
 [ext_resource type="Script" path="res://Scripts/Effects/DrunkVision.gd" id="2_bfyay"]
 [ext_resource type="Texture2D" uid="uid://cg1vnrnjt0714" path="res://Assets/Sprites/image.png" id="2_tfdsw"]
 [ext_resource type="PackedScene" uid="uid://dnjxffvtya4em" path="res://Scenes/level.tscn" id="5_7dlw3"]
@@ -13,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://8akf6gkuwb5e" path="res://Assets/Sprites/Inventory/MoonCrystal.png" id="8_6vhai"]
 [ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="9_httpg"]
 [ext_resource type="Texture2D" uid="uid://bt4d2pu05imq4" path="res://Assets/Sprites/Glow-sheet.png" id="11_0cktn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fbjm2"]
 
 [sub_resource type="Animation" id="Animation_8613t"]
 resource_name = "Drunk"
@@ -76,8 +76,6 @@ _data = {
 "RESET": SubResource("Animation_j7jin")
 }
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fbjm2"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcf5t"]
 atlas = ExtResource("11_0cktn")
 region = Rect2(0, 0, 16, 16)
@@ -140,44 +138,6 @@ animations = [{
 [node name="Player" parent="." instance=ExtResource("1_mi5pu")]
 position = Vector2(0, 8)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -21)
-zoom = Vector2(4, 4)
-process_callback = 0
-limit_bottom = 130
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
-editor_draw_limits = true
-editor_draw_drag_margin = true
-script = ExtResource("2_85m6g")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Camera2D"]
-root_node = NodePath("../../Player/Camera2D")
-libraries = {
-"": SubResource("AnimationLibrary_xmsxj")
-}
-
-[node name="limitedvision" type="TextureRect" parent="Player/Camera2D"]
-visible = false
-modulate = Color(1, 1, 1, 0.862745)
-z_index = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -115.0
-offset_right = 200.0
-offset_bottom = 110.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_5piom")
-expand_mode = 5
-
 [node name="Map" type="Node" parent="."]
 
 [node name="Killzone" parent="Map" instance=ExtResource("6_vcf38")]
@@ -187,7 +147,7 @@ position = Vector2(0, 82)
 shape = SubResource("WorldBoundaryShape2D_fbjm2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Map"]
-root_node = NodePath("../../Player/Camera2D")
+root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_xmsxj")
 }

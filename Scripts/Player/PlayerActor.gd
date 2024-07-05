@@ -11,6 +11,8 @@ var speed_modifier: float = 1.0
 var jump_modifier: float = 1.0
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var health_system:HealthManager = $HealthManager
+
 @export var inv: Inv
 
 func _physics_process(_delta):

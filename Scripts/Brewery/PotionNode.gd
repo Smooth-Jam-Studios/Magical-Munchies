@@ -3,6 +3,7 @@ extends Node
 
 @export var effects: Array[PotionEffect]
 
+
 func _ready():
 	for effect in effects:
 		activate_effect(effect.name)
