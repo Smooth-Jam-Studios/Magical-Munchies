@@ -1,14 +1,13 @@
-[gd_scene load_steps=28 format=3 uid="uid://chd5j2uijiqsk"]
+[gd_scene load_steps=27 format=3 uid="uid://chd5j2uijiqsk"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerActor.gd" id="1_iiw3q"]
 [ext_resource type="Texture2D" uid="uid://cmop7521mralf" path="res://Assets/Sprites/Player/Player-Movement.png" id="2_3s3pf"]
 [ext_resource type="Resource" uid="uid://xmkh8o7yllsa" path="res://InventoryItems/PlayerInventory.tres" id="2_f4b4x"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/StateMachine.gd" id="3_5c4cm"]
-[ext_resource type="Texture2D" uid="uid://cmop7521mralf" path="res://Assets/Sprites/Player/Player-Movement.png" id="3_60ika"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/IdleState.gd" id="4_33fco"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/MoveState.gd" id="5_kbtyb"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
-[ext_resource type="PackedScene" uid="uid://oymcjqqyy1qf" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
+[ext_resource type="PackedScene" uid="uid://cflf8us0xop6g" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
 [ext_resource type="PackedScene" uid="uid://dnd8iqitwbdvp" path="res://Scenes/audio_system.tscn" id="8_28c70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05aj4"]
@@ -55,7 +54,6 @@ atlas = ExtResource("2_3s3pf")
 region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0mnbv"]
-atlas = ExtResource("3_60ika")
 region = Rect2(64, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4efyj"]
