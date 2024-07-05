@@ -1,16 +1,26 @@
-[gd_scene load_steps=24 format=3 uid="uid://d3vuavic5m7jl"]
+[gd_scene load_steps=34 format=3 uid="uid://djhmsb5jqunud"]
 
-[ext_resource type="PackedScene" uid="uid://chd5j2uijiqsk" path="res://Scenes/player.tscn" id="1_mi5pu"]
+[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="1_mi5pu"]
 [ext_resource type="Script" path="res://Scripts/Effects/DrunkVision.gd" id="2_bfyay"]
 [ext_resource type="Texture2D" uid="uid://cg1vnrnjt0714" path="res://Assets/Sprites/image.png" id="2_tfdsw"]
-[ext_resource type="PackedScene" uid="uid://dnjxffvtya4em" path="res://Scenes/level.tscn" id="5_7dlw3"]
-[ext_resource type="PackedScene" uid="uid://cqrt8yxe5160f" path="res://Scenes/Pickup.tscn" id="6_n7eac"]
-[ext_resource type="PackedScene" uid="uid://cknnis3c2wiuy" path="res://Scenes/killzone.tscn" id="6_vcf38"]
+[ext_resource type="PackedScene" path="res://Scenes/level.tscn" id="5_7dlw3"]
+[ext_resource type="PackedScene" path="res://Scenes/Pickup.tscn" id="6_n7eac"]
+[ext_resource type="PackedScene" path="res://Scenes/killzone.tscn" id="6_vcf38"]
 [ext_resource type="Resource" uid="uid://dog0ehkcllgmu" path="res://InventoryItems/EssenceOfRain.tres" id="7_tcxwa"]
 [ext_resource type="Texture2D" uid="uid://dm6wqasaeg7q0" path="res://Assets/Sprites/Inventory/Essence of rain.png" id="7_v7odm"]
+[ext_resource type="Texture2D" uid="uid://bya1awbxr86eu" path="res://Assets/Sprites/Inventory/Leaf.png" id="7_xv74j"]
 [ext_resource type="Texture2D" uid="uid://8akf6gkuwb5e" path="res://Assets/Sprites/Inventory/MoonCrystal.png" id="8_6vhai"]
+[ext_resource type="Texture2D" uid="uid://bghmxryqiarxg" path="res://Assets/Sprites/Inventory/enchanted pine needle.png" id="8_kh55k"]
+[ext_resource type="Texture2D" uid="uid://tj8dlofu71vk" path="res://Assets/Sprites/Inventory/BloodDrop.png" id="9_gfsr3"]
 [ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="9_httpg"]
+[ext_resource type="Texture2D" uid="uid://vr7esau50v3c" path="res://Assets/Sprites/Inventory/unicorn hair.png" id="10_4ovjm"]
 [ext_resource type="Texture2D" uid="uid://bt4d2pu05imq4" path="res://Assets/Sprites/Glow-sheet.png" id="11_0cktn"]
+[ext_resource type="Texture2D" uid="uid://dy4q1yvbuvpoh" path="res://Assets/Sprites/Inventory/thunder bug.png" id="11_c2ic3"]
+[ext_resource type="Texture2D" uid="uid://bh8pmo08wqg3g" path="res://Assets/Sprites/Inventory/essene of yeast.png" id="12_0ohqg"]
+[ext_resource type="Texture2D" uid="uid://8xng3tq2llv2" path="res://Assets/Sprites/Inventory/dragon scale.png" id="13_mwf4l"]
+[ext_resource type="Texture2D" uid="uid://evfny382bht8" path="res://Assets/Sprites/Inventory/nightshade berries.png" id="14_vvlhi"]
+[ext_resource type="Resource" uid="uid://cuhq5k4j2v58r" path="res://InventoryItems/FairyDust.tres" id="15_ubn2x"]
+[ext_resource type="Texture2D" uid="uid://bbo1aa8s6mjup" path="res://Assets/Sprites/Inventory/fairy dust.png" id="16_aaxe0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fbjm2"]
 
@@ -175,8 +185,63 @@ expand_mode = 1
 
 [node name="Pickups" type="Node" parent="."]
 
+[node name="Pickup weed" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(-467, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup weed"]
+texture = ExtResource("7_xv74j")
+
+[node name="Pickup Enchanted pine needle" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(-2009, 18)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup Enchanted pine needle"]
+texture = ExtResource("8_kh55k")
+
+[node name="Pickup Blood of Kraken" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(1505, -885)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup Blood of Kraken"]
+texture = ExtResource("9_gfsr3")
+
+[node name="Pickup Unicorn hair" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(-2294, -376)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup Unicorn hair"]
+texture = ExtResource("10_4ovjm")
+
+[node name="Pickup Thunderbug" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(90, -871)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup Thunderbug"]
+texture = ExtResource("11_c2ic3")
+
+[node name="Pickup essence of yeast" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(1104, -456)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup essence of yeast"]
+texture = ExtResource("12_0ohqg")
+
+[node name="Pickup dragon scales" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(494, -456)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup dragon scales"]
+texture = ExtResource("13_mwf4l")
+
+[node name="Pickup Nightshade berries" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(-204, -649)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup Nightshade berries"]
+texture = ExtResource("14_vvlhi")
+
+[node name="Pickup-Fairy dust" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(22, -711)
+item = ExtResource("15_ubn2x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Fairy dust"]
+texture = ExtResource("16_aaxe0")
+
 [node name="Pickup-ThingyOfRain" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(80, 16)
+position = Vector2(83, 23)
 item = ExtResource("7_tcxwa")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-ThingyOfRain"]
