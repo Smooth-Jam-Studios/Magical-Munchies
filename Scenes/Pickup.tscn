@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqrt8yxe5160f"]
+[gd_scene load_steps=3 format=3 uid="uid://c0rnwyff7aerr"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/PickUp.gd" id="1_wpk1g"]
 

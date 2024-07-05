@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://chd5j2uijiqsk"]
+[gd_scene load_steps=36 format=3 uid="uid://swnxfrphi1h7"]
 
 [ext_resource type="Script" path="res://Scripts/Brewery/PotionNode.gd" id="1_esuby"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerActor.gd" id="1_iiw3q"]
@@ -8,9 +8,8 @@
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/IdleState.gd" id="4_33fco"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/MoveState.gd" id="5_kbtyb"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
-[ext_resource type="PackedScene" uid="uid://cflf8us0xop6g" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
-[ext_resource type="PackedScene" uid="uid://dnd8iqitwbdvp" path="res://Scenes/audio_system.tscn" id="8_28c70"]
-[ext_resource type="Resource" uid="uid://cpr7d63h14doa" path="res://Scripts/Brewery/Effects/Draught_of_Ascendance.tres" id="11_af1op"]
+[ext_resource type="PackedScene" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
+[ext_resource type="PackedScene" uid="uid://r864vy1klthy" path="res://Scenes/audio_system.tscn" id="8_28c70"]
 [ext_resource type="Script" path="res://Scripts/Effects/LimitedVision.gd" id="14_1vnu4"]
 [ext_resource type="Script" path="res://Scripts/Player/HealthManager.gd" id="14_ag4fv"]
 [ext_resource type="Texture2D" uid="uid://fher4dstuea7" path="res://Assets/Sprites/Vision.png" id="15_n3wv8"]
@@ -268,7 +267,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PotionNode" type="Node" parent="."]
 script = ExtResource("1_esuby")
-effects = Array[Resource("res://Scripts/Brewery/PotionEffect.gd")]([ExtResource("11_af1op"), null, null, null])
 
 [node name="HealthManager" type="Node" parent="."]
 script = ExtResource("14_ag4fv")

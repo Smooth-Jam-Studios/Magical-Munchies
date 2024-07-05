@@ -1,11 +1,14 @@
-[gd_scene load_steps=34 format=3 uid="uid://djhmsb5jqunud"]
+[gd_scene load_steps=37 format=3 uid="uid://djhmsb5jqunud"]
 
-[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="1_mi5pu"]
+[ext_resource type="Texture2D" uid="uid://d3ssvl5r3aqtk" path="res://Assets/Sprites/Inventory/intro screen.png" id="1_gru3n"]
+[ext_resource type="PackedScene" uid="uid://swnxfrphi1h7" path="res://Scenes/player.tscn" id="1_mi5pu"]
+[ext_resource type="Script" path="res://Scenes/TextureRect.gd" id="2_8iivn"]
 [ext_resource type="Script" path="res://Scripts/Effects/DrunkVision.gd" id="2_bfyay"]
 [ext_resource type="Texture2D" uid="uid://cg1vnrnjt0714" path="res://Assets/Sprites/image.png" id="2_tfdsw"]
 [ext_resource type="PackedScene" path="res://Scenes/level.tscn" id="5_7dlw3"]
-[ext_resource type="PackedScene" path="res://Scenes/Pickup.tscn" id="6_n7eac"]
+[ext_resource type="PackedScene" uid="uid://c0rnwyff7aerr" path="res://Scenes/Pickup.tscn" id="6_n7eac"]
 [ext_resource type="PackedScene" path="res://Scenes/killzone.tscn" id="6_vcf38"]
+[ext_resource type="Texture2D" uid="uid://ee2wjkhb7ahg" path="res://Assets/Sprites/Inventory/Skull.png" id="7_fj1nn"]
 [ext_resource type="Resource" uid="uid://dog0ehkcllgmu" path="res://InventoryItems/EssenceOfRain.tres" id="7_tcxwa"]
 [ext_resource type="Texture2D" uid="uid://dm6wqasaeg7q0" path="res://Assets/Sprites/Inventory/Essence of rain.png" id="7_v7odm"]
 [ext_resource type="Texture2D" uid="uid://bya1awbxr86eu" path="res://Assets/Sprites/Inventory/Leaf.png" id="7_xv74j"]
@@ -145,8 +148,16 @@ animations = [{
 
 [node name="GameRoot" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -206.0
+offset_top = -112.0
+offset_right = 50.0
+offset_bottom = 32.0
+texture = ExtResource("1_gru3n")
+script = ExtResource("2_8iivn")
+
 [node name="Player" parent="." instance=ExtResource("1_mi5pu")]
-position = Vector2(0, 8)
+position = Vector2(-233, 28)
 
 [node name="Map" type="Node" parent="."]
 
@@ -184,6 +195,12 @@ expand_mode = 1
 [node name="Level" parent="Map" instance=ExtResource("5_7dlw3")]
 
 [node name="Pickups" type="Node" parent="."]
+
+[node name="Pickup" parent="Pickups" instance=ExtResource("6_n7eac")]
+position = Vector2(840, -523)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup"]
+texture = ExtResource("7_fj1nn")
 
 [node name="Pickup weed" parent="Pickups" instance=ExtResource("6_n7eac")]
 position = Vector2(-467, 16)
@@ -272,3 +289,7 @@ frame_progress = 0.113427
 
 [node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon2"]
 texture = ExtResource("8_6vhai")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
