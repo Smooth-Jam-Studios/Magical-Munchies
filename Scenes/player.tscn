@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerActor.gd" id="1_iiw3q"]
 [ext_resource type="Texture2D" uid="uid://cmop7521mralf" path="res://Assets/Sprites/Player/Player-Movement.png" id="2_3s3pf"]
-[ext_resource type="Resource" uid="uid://dvnwf7amnrcaa" path="res://InventoryItems/new_test_inv.tres" id="2_eqvtq"]
+[ext_resource type="Resource" uid="uid://c4bpxmnroo6re" path="res://InventoryItems/new_test_inv.tres" id="2_eqvtq"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/StateMachine.gd" id="3_5c4cm"]
 [ext_resource type="Texture2D" uid="uid://bgclkmim7xb81" path="res://Assets/Sprites/Player/knight.png" id="3_60ika"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/IdleState.gd" id="4_33fco"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/MoveState.gd" id="5_kbtyb"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
-[ext_resource type="PackedScene" uid="uid://dnd8iqitwbdvp" path="res://Scenes/audio_system.tscn" id="8_28c70"]
+[ext_resource type="PackedScene" path="res://Scenes/audio_system.tscn" id="8_28c70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05aj4"]
 size = Vector2(3.33333, 11)

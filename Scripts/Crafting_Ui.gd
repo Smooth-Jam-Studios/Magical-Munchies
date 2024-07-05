@@ -1,16 +1,24 @@
 extends Area2D
 var InRange: bool  = false  
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+signal toggle_inventory(external_inventory_owner)
+@export var inventory_data: InvData
 
 func _on_body_entered(body):
 	print("I wodont worrk!")
 	InRange = true
 
-
+func player_interact() -> void:
+	toggle_inventory.emit(self)
+	
 
 
 func _process(delta):
 	if Input.is_action_just_pressed("f") && InRange:
-		get_tree().change_scene_to_file("res://Scenes/Minigame.tscn")
+		player_interact()
+		
 
+
+func _on_body_exited(body):
+	InRange = false
+	player_interact()
+	
