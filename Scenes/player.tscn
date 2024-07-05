@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://chd5j2uijiqsk"]
+[gd_scene load_steps=37 format=3 uid="uid://chd5j2uijiqsk"]
 
 [ext_resource type="Script" path="res://Scripts/Brewery/PotionNode.gd" id="1_esuby"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerActor.gd" id="1_iiw3q"]
@@ -10,9 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
 [ext_resource type="PackedScene" uid="uid://cflf8us0xop6g" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
 [ext_resource type="PackedScene" uid="uid://dnd8iqitwbdvp" path="res://Scenes/audio_system.tscn" id="8_28c70"]
-[ext_resource type="Resource" uid="uid://cn2ixxrtvc45e" path="res://Scripts/Brewery/Effects/ThunderBrew.tres" id="9_il78h"]
-[ext_resource type="Resource" uid="uid://bacrn8t1mpb6n" path="res://Scripts/Brewery/Effects/PotionEffect.tres" id="10_245dm"]
-[ext_resource type="Resource" uid="uid://dbutej2wale0n" path="res://Scripts/Brewery/Effects/Liquid_Stone.tres" id="13_xatk6"]
+[ext_resource type="Resource" uid="uid://cpr7d63h14doa" path="res://Scripts/Brewery/Effects/Draught_of_Ascendance.tres" id="11_af1op"]
 [ext_resource type="Script" path="res://Scripts/Effects/LimitedVision.gd" id="14_1vnu4"]
 [ext_resource type="Script" path="res://Scripts/Player/HealthManager.gd" id="14_ag4fv"]
 [ext_resource type="Texture2D" uid="uid://fher4dstuea7" path="res://Assets/Sprites/Vision.png" id="15_n3wv8"]
@@ -270,7 +268,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PotionNode" type="Node" parent="."]
 script = ExtResource("1_esuby")
-effects = Array[Resource("res://Scripts/Brewery/PotionEffect.gd")]([ExtResource("9_il78h"), ExtResource("10_245dm"), ExtResource("13_xatk6")])
+effects = Array[Resource("res://Scripts/Brewery/PotionEffect.gd")]([ExtResource("11_af1op"), null, null, null])
 
 [node name="HealthManager" type="Node" parent="."]
 script = ExtResource("14_ag4fv")
@@ -280,9 +278,6 @@ position = Vector2(0, -21)
 zoom = Vector2(4, 4)
 process_callback = 0
 limit_bottom = 130
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 drag_left_margin = 0.1
 drag_top_margin = 0.1
 drag_right_margin = 0.1
@@ -305,10 +300,10 @@ z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -115.0
-offset_right = 200.0
-offset_bottom = 110.0
+offset_left = -280.0
+offset_top = -160.0
+offset_right = 280.0
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("15_n3wv8")

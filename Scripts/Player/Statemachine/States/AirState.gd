@@ -12,7 +12,7 @@ func enter(msg:={}) -> void:
 func physics_update(delta: float) -> void:
 	# Horizontal
 	player.direction = (Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left"))
-	player.velocity.x = player.SPEED * player.speed_modifier * player.direction
+	player.velocity.x = player.SPEED * player.speed_modifier * player.direction * player.get_direction_modifier()
 
 	# Vertical
 	player.velocity.y += player.get_gravity(player.velocity) * delta

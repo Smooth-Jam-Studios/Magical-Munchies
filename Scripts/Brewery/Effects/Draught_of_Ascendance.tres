@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Draught_of_Ascendance" load_steps=2 format=3 uid="uid://cpr7d63h14doa"]
+
+[sub_resource type="GDScript" id="GDScript_hsgan"]
+script/source = "class_name Draught_of_Ascendance
+extends PotionEffect
+
+var player: PlayerActor
+
+func on_activate(_caller: Node):
+	player = _caller.get_parent() as PlayerActor
+	if (player):
+		player.set_jump_modifier(2)
+
+func _update(_caller: Node, _delta: float):
+	pass
+
+func on_deactivate(_caller: Node):
+	if (player):
+		player.set_jump_modifier(1)
+"
+
+[resource]
+script = SubResource("GDScript_hsgan")
+name = "DraughtA"
