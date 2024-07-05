@@ -10,9 +10,13 @@ func _ready():
     effect.on_activate(get_parent())
 
 func _process(delta):
-    time_active += delta
-    if time_active >= duration:
-        effect.on_deactivate(get_parent())
-        queue_free()
-        return
+    # time_active += delta
+    # if time_active >= duration:
+    #     effect.on_deactivate(get_parent())
+    #     queue_free()
+    #     return
     effect._update(self, delta)
+
+func disable():
+    effect.on_deactivate(get_parent())
+    queue_free()

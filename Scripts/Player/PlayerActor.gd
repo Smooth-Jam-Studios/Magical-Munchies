@@ -9,6 +9,7 @@ var direction: float = 0
 
 var speed_modifier: float = 1.0
 var jump_modifier: float = 1.0
+var direction_inverted: bool = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var health_system:HealthManager = $HealthManager
@@ -44,3 +45,9 @@ func set_jump_modifier(modifier: float):
 	# if modifier < 0.2:
 	# 	modifier = 0.2
 	jump_modifier = modifier
+
+func set_direction_modifier(value: bool):
+	direction_inverted = value
+
+func get_direction_modifier() -> float:
+	return -1 if direction_inverted else 1
