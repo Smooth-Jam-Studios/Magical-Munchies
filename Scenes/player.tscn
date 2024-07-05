@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/IdleState.gd" id="4_33fco"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/MoveState.gd" id="5_kbtyb"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
-[ext_resource type="PackedScene" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
+[ext_resource type="PackedScene" uid="uid://cflf8us0xop6g" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
 [ext_resource type="PackedScene" uid="uid://dnd8iqitwbdvp" path="res://Scenes/audio_system.tscn" id="8_28c70"]
 [ext_resource type="Resource" uid="uid://cn2ixxrtvc45e" path="res://Scripts/Brewery/Effects/ThunderBrew.tres" id="9_il78h"]
 [ext_resource type="Resource" uid="uid://bacrn8t1mpb6n" path="res://Scripts/Brewery/Effects/PotionEffect.tres" id="10_245dm"]

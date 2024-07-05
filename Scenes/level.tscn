@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnjxffvtya4em"]
+[gd_scene load_steps=11 format=3 uid="uid://dnjxffvtya4em"]
 
-[ext_resource type="PackedScene" uid="uid://chd5j2uijiqsk" path="res://Scenes/player.tscn" id="1_iggsl"]
 [ext_resource type="Texture2D" uid="uid://cvh4yyxla63yc" path="res://Assets/Sprites/platforms.png" id="2_2awmg"]
 [ext_resource type="Texture2D" uid="uid://ci4ymtvj26gqa" path="res://Assets/Sprites/Sprite-0002.png" id="4_ck35w"]
 [ext_resource type="PackedScene" uid="uid://cknnis3c2wiuy" path="res://Scenes/killzone.tscn" id="5_f377b"]
@@ -216,24 +215,6 @@ sources/3 = SubResource("TileSetAtlasSource_4i7pw")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fbjm2"]
 
 [node name="Level" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_iggsl")]
-position = Vector2(0, 8)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -21)
-zoom = Vector2(4, 4)
-process_callback = 0
-limit_bottom = 130
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
-editor_draw_limits = true
-editor_draw_drag_margin = true
 
 [node name="Map" type="Node" parent="."]
 
