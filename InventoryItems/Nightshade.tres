@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://d2fd20y8wfqqk"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/InventoryItem.gd" id="1_fapen"]
+[ext_resource type="Texture2D" uid="uid://evfny382bht8" path="res://Assets/Sprites/Inventory/nightshade berries.png" id="2_ragov"]
+
+[resource]
+script = ExtResource("1_fapen")
+name = "Nightshade"
+texture = ExtResource("2_ragov")
