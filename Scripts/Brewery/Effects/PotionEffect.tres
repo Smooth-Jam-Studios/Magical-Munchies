@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PotionEffect" load_steps=2 format=3 uid="uid://bacrn8t1mpb6n"]
+
+[ext_resource type="Script" path="res://Scripts/Brewery/PotionEffect.gd" id="1_0l3uw"]
+
+[resource]
+script = ExtResource("1_0l3uw")
+name = "PotionEffect"
