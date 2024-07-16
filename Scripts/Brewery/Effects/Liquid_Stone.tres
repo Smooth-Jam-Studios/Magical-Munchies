@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Liquid_Stone" load_steps=2 format=3 uid="uid://dbutej2wale0n"]
+
+[ext_resource type="Script" path="res://Scripts/Brewery/Effects/Liquid_Stone.gd" id="1_e4fpg"]
+
+[resource]
+script = ExtResource("1_e4fpg")
+name = "Liquid_Stone"

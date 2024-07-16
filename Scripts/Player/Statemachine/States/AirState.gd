@@ -5,14 +5,14 @@ extends PlayerState
 
 func enter(msg:={}) -> void:
 	if msg.has("do_jump"):
-		player.velocity.y = -player.JUMP_VELOCITY
+		player.velocity.y = -player.JUMP_VELOCITY * player.jump_modifier
 		EventBus.play_sound("PlayerJump")
 		player.animated_sprite.play("Jump")
 
 func physics_update(delta: float) -> void:
 	# Horizontal
 	player.direction = (Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left"))
-	player.velocity.x = player.SPEED * player.direction
+	player.velocity.x = player.SPEED * player.speed_modifier * player.direction * player.get_direction_modifier()
 
 	# Vertical
 	player.velocity.y += player.get_gravity(player.velocity) * delta
@@ -20,7 +20,6 @@ func physics_update(delta: float) -> void:
 	if Input.is_action_just_released("Jump") and player.velocity.y < 0.0:
 		if use_variable_jump:
 			player.velocity.y = player.JUMP_VELOCITY / 4.0
-		
 	
 	# Apply movement
 	player.move_and_slide()

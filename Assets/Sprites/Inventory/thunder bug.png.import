@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgclkmim7xb81"
-path="res://.godot/imported/knight.png-d12f0fc68905d26de6ad5711b0d3ea67.ctex"
+uid="uid://dy4q1yvbuvpoh"
+path="res://.godot/imported/thunder bug.png-7f23398ae6f83978419cfdf73cba86e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Player/knight.png"
-dest_files=["res://.godot/imported/knight.png-d12f0fc68905d26de6ad5711b0d3ea67.ctex"]
+source_file="res://Assets/Sprites/Inventory/thunder bug.png"
+dest_files=["res://.godot/imported/thunder bug.png-7f23398ae6f83978419cfdf73cba86e2.ctex"]
 
 [params]
 

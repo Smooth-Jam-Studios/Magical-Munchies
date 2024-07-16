@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bya1awbxr86eu"
-path="res://.godot/imported/Leaf.png-cc59d97f4467e22a0b8a447570019fc5.ctex"
+uid="uid://evfny382bht8"
+path="res://.godot/imported/nightshade berries.png-61f728a7b0c4054f437280ae1c1182ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Leaf.png"
-dest_files=["res://.godot/imported/Leaf.png-cc59d97f4467e22a0b8a447570019fc5.ctex"]
+source_file="res://Assets/Sprites/Inventory/nightshade berries.png"
+dest_files=["res://.godot/imported/nightshade berries.png-61f728a7b0c4054f437280ae1c1182ef.ctex"]
 
 [params]
 
