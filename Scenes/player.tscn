@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://swnxfrphi1h7"]
+[gd_scene load_steps=35 format=3 uid="uid://swnxfrphi1h7"]
 
 [ext_resource type="Script" path="res://Scripts/Brewery/PotionNode.gd" id="1_esuby"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerActor.gd" id="1_iiw3q"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/IdleState.gd" id="4_33fco"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/MoveState.gd" id="5_kbtyb"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/AirState.gd" id="6_xte7u"]
-[ext_resource type="PackedScene" path="res://Scenes/inv_ui.tscn" id="7_1ogty"]
 [ext_resource type="PackedScene" uid="uid://r864vy1klthy" path="res://Scenes/audio_system.tscn" id="8_28c70"]
 [ext_resource type="Script" path="res://Scripts/Effects/LimitedVision.gd" id="14_1vnu4"]
 [ext_resource type="Script" path="res://Scripts/Player/HealthManager.gd" id="14_ag4fv"]
@@ -257,13 +256,6 @@ script = ExtResource("6_xte7u")
 
 [node name="AudioSystem" parent="." instance=ExtResource("8_28c70")]
 scale = Vector2(1.5, 1.5)
-
-[node name="Inv_UI" parent="." instance=ExtResource("7_1ogty")]
-offset_left = -67.5
-offset_top = -139.5
-offset_right = 22.5
-offset_bottom = -74.5
-metadata/_edit_use_anchors_ = true
 
 [node name="PotionNode" type="Node" parent="."]
 script = ExtResource("1_esuby")

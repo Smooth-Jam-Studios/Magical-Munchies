@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://4hcjyktdwq4r"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory/InventoryItem.gd" id="1_yiqot"]
+[ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/InventoryItem.gd" id="1_yiqot"]
 [ext_resource type="Texture2D" uid="uid://8xng3tq2llv2" path="res://Assets/Sprites/Inventory/dragon scale.png" id="2_uadsc"]
 
 [resource]
