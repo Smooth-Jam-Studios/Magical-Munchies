@@ -1,8 +1,15 @@
-[gd_resource type="Resource" script_class="InvData" load_steps=2 format=3 uid="uid://xmkh8o7yllsa"]
+[gd_resource type="Resource" script_class="InvData" load_steps=5 format=3 uid="uid://xmkh8o7yllsa"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/InventoryData.gd" id="1_8tu7d"]
+[ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="2_ggrat"]
+[ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/InventorySlot.gd" id="3_uemlh"]
+
+[sub_resource type="Resource" id="Resource_7tihp"]
+script = ExtResource("3_uemlh")
+item_data = ExtResource("2_ggrat")
+quantity = 1
 
 [resource]
 script = ExtResource("1_8tu7d")
-slot_datas = Array[Resource("res://Scripts/Inventory/InventorySlot.gd")]([null, null, null, null, null, null, null, null, null, null, null])
+slot_datas = Array[ExtResource("3_uemlh")]([SubResource("Resource_7tihp"), null, null, null, null, null, null, null, null, null])
 naam = ""
