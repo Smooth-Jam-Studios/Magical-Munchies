@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg1h2sms2xu3d"]
+
+[ext_resource type="Script" path="res://Scripts/Crafting.gd" id="1_d43x1"]
+[ext_resource type="Texture2D" uid="uid://dyno7omlk6wl8" path="res://Assets/Sprites/ketel1.png" id="2_qqiwp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1guo4"]
+radius = 11.1803
+
+[node name="Crafting" type="Area2D" groups=["external_inventory"]]
+collision_mask = 6
+script = ExtResource("1_d43x1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_1guo4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qqiwp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,8 +4,8 @@ extends Area2D
 
 func _on_body_entered(_body: Node2D) -> void:
 	timer.start()
-	var player:PlayerActor = _body
-	player.inv.clear()
+	# var player:PlayerActor = _body
+	# player.inventory_data.clear()
 	EventBus.stop_all_sounds_in_bus(AudioBus.BusTypes.MUSIC)
 	EventBus.play_sound("PlayerDeath")
 
