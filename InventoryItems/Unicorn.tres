@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cabioix35ww2i"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/InventoryItem.gd" id="1_b2r0b"]
+[ext_resource type="Script" path="res://Scripts/Inventory/item_data.gd" id="1_b2r0b"]
 [ext_resource type="Texture2D" uid="uid://vr7esau50v3c" path="res://Assets/Sprites/Inventory/unicorn hair.png" id="2_654oa"]
 
 [resource]

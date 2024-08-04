@@ -1,6 +1,7 @@
-[gd_scene load_steps=40 format=3 uid="uid://djhmsb5jqunud"]
+[gd_scene load_steps=51 format=3 uid="uid://djhmsb5jqunud"]
 
 [ext_resource type="Texture2D" uid="uid://d3ssvl5r3aqtk" path="res://Assets/Sprites/Inventory/intro screen.png" id="1_gru3n"]
+[ext_resource type="Script" path="res://Scripts/global.gd" id="1_h47ct"]
 [ext_resource type="PackedScene" uid="uid://swnxfrphi1h7" path="res://Scenes/player.tscn" id="1_mi5pu"]
 [ext_resource type="Script" path="res://Scenes/TextureRect.gd" id="2_8iivn"]
 [ext_resource type="Script" path="res://Scripts/Effects/DrunkVision.gd" id="2_bfyay"]
@@ -9,24 +10,31 @@
 [ext_resource type="PackedScene" uid="uid://c0rnwyff7aerr" path="res://Scenes/Pickup.tscn" id="6_n7eac"]
 [ext_resource type="PackedScene" uid="uid://cknnis3c2wiuy" path="res://Scenes/killzone.tscn" id="6_vcf38"]
 [ext_resource type="Texture2D" uid="uid://ee2wjkhb7ahg" path="res://Assets/Sprites/Inventory/Skull.png" id="7_fj1nn"]
-[ext_resource type="Resource" uid="uid://dog0ehkcllgmu" path="res://InventoryItems/EssenceOfRain.tres" id="7_tcxwa"]
 [ext_resource type="Texture2D" uid="uid://dm6wqasaeg7q0" path="res://Assets/Sprites/Inventory/Essence of rain.png" id="7_v7odm"]
-[ext_resource type="Texture2D" uid="uid://bya1awbxr86eu" path="res://Assets/Sprites/Inventory/Leaf.png" id="7_xv74j"]
 [ext_resource type="Texture2D" uid="uid://8akf6gkuwb5e" path="res://Assets/Sprites/Inventory/MoonCrystal.png" id="8_6vhai"]
 [ext_resource type="Texture2D" uid="uid://bghmxryqiarxg" path="res://Assets/Sprites/Inventory/enchanted pine needle.png" id="8_kh55k"]
 [ext_resource type="Texture2D" uid="uid://tj8dlofu71vk" path="res://Assets/Sprites/Inventory/BloodDrop.png" id="9_gfsr3"]
-[ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="9_httpg"]
+[ext_resource type="Resource" uid="uid://cb4y0q4601c0w" path="res://InventoryItems/Skull.tres" id="10_3b3wu"]
 [ext_resource type="Texture2D" uid="uid://vr7esau50v3c" path="res://Assets/Sprites/Inventory/unicorn hair.png" id="10_4ovjm"]
-[ext_resource type="Texture2D" uid="uid://bt4d2pu05imq4" path="res://Assets/Sprites/Glow-sheet.png" id="11_0cktn"]
 [ext_resource type="Texture2D" uid="uid://dy4q1yvbuvpoh" path="res://Assets/Sprites/Inventory/thunder bug.png" id="11_c2ic3"]
 [ext_resource type="Texture2D" uid="uid://bh8pmo08wqg3g" path="res://Assets/Sprites/Inventory/essene of yeast.png" id="12_0ohqg"]
 [ext_resource type="Texture2D" uid="uid://8xng3tq2llv2" path="res://Assets/Sprites/Inventory/dragon scale.png" id="13_mwf4l"]
+[ext_resource type="Script" path="res://Scripts/Inventory/slot_data.gd" id="14_kolqk"]
 [ext_resource type="Texture2D" uid="uid://evfny382bht8" path="res://Assets/Sprites/Inventory/nightshade berries.png" id="14_vvlhi"]
-[ext_resource type="Resource" uid="uid://bckky571ta418" path="res://InventoryItems/Blood.tres" id="15_ubn2x"]
+[ext_resource type="Resource" uid="uid://dlft20141hywg" path="res://InventoryItems/Pine.tres" id="15_eoa6v"]
 [ext_resource type="Texture2D" uid="uid://bbo1aa8s6mjup" path="res://Assets/Sprites/Inventory/fairy dust.png" id="16_aaxe0"]
-[ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/InventoryInterface.gd" id="25_6kult"]
-[ext_resource type="PackedScene" uid="uid://byr4scon6p2bg" path="res://Scenes/NewInventory/Inventory.tscn" id="25_urxpx"]
-[ext_resource type="PackedScene" uid="uid://gb7vycxxl6ko" path="res://Scenes/NewInventory/Slot.tscn" id="28_qe8f8"]
+[ext_resource type="Resource" uid="uid://bckky571ta418" path="res://InventoryItems/Blood.tres" id="17_qk0rt"]
+[ext_resource type="Resource" uid="uid://cabioix35ww2i" path="res://InventoryItems/Unicorn.tres" id="19_gspoc"]
+[ext_resource type="Resource" uid="uid://haoaymdw2es2" path="res://InventoryItems/ThunderBug.tres" id="21_w05w6"]
+[ext_resource type="Resource" uid="uid://5lf5d7rtxwwa" path="res://InventoryItems/Yeast.tres" id="23_sf4h7"]
+[ext_resource type="Script" path="res://Scripts/Inventory/InventoryInterface.gd" id="25_4uobj"]
+[ext_resource type="Resource" uid="uid://4hcjyktdwq4r" path="res://InventoryItems/DragonScale.tres" id="25_a0tq2"]
+[ext_resource type="PackedScene" uid="uid://dlpmysnqwhbi4" path="res://Scenes/inventory.tscn" id="25_d2q2w"]
+[ext_resource type="Resource" uid="uid://d2fd20y8wfqqk" path="res://InventoryItems/Nightshade.tres" id="27_2y7xf"]
+[ext_resource type="PackedScene" uid="uid://c2f57ghurxqu4" path="res://Scenes/slot.tscn" id="28_u28qp"]
+[ext_resource type="Resource" uid="uid://cuhq5k4j2v58r" path="res://InventoryItems/FairyDust.tres" id="29_iiysp"]
+[ext_resource type="Resource" uid="uid://dog0ehkcllgmu" path="res://InventoryItems/EssenceOfRain.tres" id="31_komao"]
+[ext_resource type="Resource" uid="uid://bc1ns2grlsrwx" path="res://InventoryItems/Moon.tres" id="33_xj1qf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fbjm2"]
 
@@ -92,64 +100,52 @@ _data = {
 "RESET": SubResource("Animation_j7jin")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bcf5t"]
-atlas = ExtResource("11_0cktn")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="Resource" id="Resource_j877l"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("17_qk0rt")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7kdo"]
-atlas = ExtResource("11_0cktn")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="Resource" id="Resource_8u5m6"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("25_a0tq2")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1wv7g"]
-atlas = ExtResource("11_0cktn")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="Resource" id="Resource_u7j42"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("31_komao")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ouu3c"]
-atlas = ExtResource("11_0cktn")
-region = Rect2(48, 0, 16, 16)
+[sub_resource type="Resource" id="Resource_dkmbn"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("29_iiysp")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gn65m"]
-atlas = ExtResource("11_0cktn")
-region = Rect2(64, 0, 16, 16)
+[sub_resource type="Resource" id="Resource_loybs"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("33_xj1qf")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p2h44"]
-atlas = ExtResource("11_0cktn")
-region = Rect2(80, 0, 16, 16)
+[sub_resource type="Resource" id="Resource_1pml3"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("27_2y7xf")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r77xn"]
-atlas = ExtResource("11_0cktn")
-region = Rect2(96, 0, 16, 16)
+[sub_resource type="Resource" id="Resource_wrclp"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("15_eoa6v")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3bll5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bcf5t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d7kdo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1wv7g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ouu3c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gn65m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p2h44")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r77xn")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="Resource" id="Resource_ip1w1"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("10_3b3wu")
+
+[sub_resource type="Resource" id="Resource_t68bm"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("21_w05w6")
+
+[sub_resource type="Resource" id="Resource_cnipu"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("19_gspoc")
+
+[sub_resource type="Resource" id="Resource_dgm64"]
+script = ExtResource("14_kolqk")
+item_data = ExtResource("23_sf4h7")
 
 [node name="GameRoot" type="Node2D"]
+script = ExtResource("1_h47ct")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -206.0
@@ -197,122 +193,111 @@ expand_mode = 1
 
 [node name="Level" parent="Map" instance=ExtResource("5_7dlw3")]
 
-[node name="Pickups" type="Node" parent="."]
-
-[node name="Pickup" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(840, -523)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup"]
-texture = ExtResource("7_fj1nn")
-
-[node name="Pickup weed" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(-467, 16)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup weed"]
-texture = ExtResource("7_xv74j")
-
-[node name="Pickup Enchanted pine needle" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(-2009, 18)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup Enchanted pine needle"]
-texture = ExtResource("8_kh55k")
-
-[node name="Pickup Blood of Kraken" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(1505, -885)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup Blood of Kraken"]
-texture = ExtResource("9_gfsr3")
-
-[node name="Pickup Unicorn hair" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(-2294, -376)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup Unicorn hair"]
-texture = ExtResource("10_4ovjm")
-
-[node name="Pickup Thunderbug" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(90, -871)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup Thunderbug"]
-texture = ExtResource("11_c2ic3")
-
-[node name="Pickup essence of yeast" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(1104, -456)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup essence of yeast"]
-texture = ExtResource("12_0ohqg")
-
-[node name="Pickup dragon scales" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(494, -456)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup dragon scales"]
-texture = ExtResource("13_mwf4l")
-
-[node name="Pickup Nightshade berries" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(-204, -649)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup Nightshade berries"]
-texture = ExtResource("14_vvlhi")
-
-[node name="Pickup-Fairy dust" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(22, -711)
-item = ExtResource("15_ubn2x")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Fairy dust"]
-texture = ExtResource("16_aaxe0")
-
-[node name="Pickup-ThingyOfRain" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(83, 23)
-item = ExtResource("7_tcxwa")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-ThingyOfRain"]
-texture = ExtResource("7_v7odm")
-
-[node name="Pickup-Moon" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(160, 8)
-item = ExtResource("9_httpg")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon"]
-texture = ExtResource("8_6vhai")
-
-[node name="Pickup-Moon2" parent="Pickups" instance=ExtResource("6_n7eac")]
-position = Vector2(336, 24)
-item = ExtResource("9_httpg")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pickups/Pickup-Moon2"]
-position = Vector2(9, -10)
-sprite_frames = SubResource("SpriteFrames_3bll5")
-autoplay = "default"
-frame_progress = 0.299715
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Pickups/Pickup-Moon2"]
-position = Vector2(-11, -8)
-sprite_frames = SubResource("SpriteFrames_3bll5")
-autoplay = "default"
-frame_progress = 0.113427
-
-[node name="Sprite2D" type="Sprite2D" parent="Pickups/Pickup-Moon2"]
-texture = ExtResource("8_6vhai")
-
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="UI"]
+[node name="InventoryInterface" type="Control" parent="UI"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("25_4uobj")
+
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("25_d2q2w")]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 50.0
 offset_bottom = 50.0
-script = ExtResource("25_6kult")
-metadata/_edit_use_anchors_ = true
 
-[node name="Inventory" parent="UI/Control" instance=ExtResource("25_urxpx")]
-layout_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="GrabbedSlot" parent="UI/Control" instance=ExtResource("28_qe8f8")]
+[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("28_u28qp")]
 visible = false
+modulate = Color(1, 1, 1, 0.439216)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="New Pickup" type="Node" parent="."]
+
+[node name="Pickup-Blood" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(1505, -885)
+slot_data = SubResource("Resource_j877l")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-Blood"]
+texture = ExtResource("9_gfsr3")
+
+[node name="Pickup-dragon" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(494, -456)
+slot_data = SubResource("Resource_8u5m6")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-dragon"]
+texture = ExtResource("13_mwf4l")
+
+[node name="Pickup-essence" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(83, 23)
+slot_data = SubResource("Resource_u7j42")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-essence"]
+texture = ExtResource("7_v7odm")
+
+[node name="Pickup-fairy" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(22, -711)
+slot_data = SubResource("Resource_dkmbn")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-fairy"]
+texture = ExtResource("16_aaxe0")
+
+[node name="Pickup-moon" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(160, 8)
+slot_data = SubResource("Resource_loybs")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-moon"]
+texture = ExtResource("8_6vhai")
+
+[node name="Pickup-nightshade" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(-204, -649)
+slot_data = SubResource("Resource_1pml3")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-nightshade"]
+texture = ExtResource("14_vvlhi")
+
+[node name="Pickup-pine" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(-2009, 18)
+slot_data = SubResource("Resource_wrclp")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-pine"]
+texture = ExtResource("8_kh55k")
+
+[node name="Pickup-skull" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(840, -523)
+slot_data = SubResource("Resource_ip1w1")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-skull"]
+texture = ExtResource("7_fj1nn")
+
+[node name="Pickup-thunderbug" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(90, -871)
+slot_data = SubResource("Resource_t68bm")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-thunderbug"]
+texture = ExtResource("11_c2ic3")
+
+[node name="Pickup-unicorn" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(-2294, -376)
+slot_data = SubResource("Resource_cnipu")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-unicorn"]
+texture = ExtResource("10_4ovjm")
+
+[node name="Pickup-yeast" parent="New Pickup" instance=ExtResource("6_n7eac")]
+position = Vector2(1104, -456)
+slot_data = SubResource("Resource_dgm64")
+
+[node name="Sprite2D" type="Sprite2D" parent="New Pickup/Pickup-yeast"]
+texture = ExtResource("12_0ohqg")

@@ -14,7 +14,7 @@ var direction_inverted: bool = false
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var health_system:HealthManager = $HealthManager
 
-@export var inventory_data: InvData
+@export var inventory_data: InventoryData
 
 func _physics_process(_delta):
 
@@ -25,8 +25,8 @@ func _physics_process(_delta):
 		animated_sprite.flip_h = true
 
 	# move_and_slide()
-# func collect(item):
-# 	inv.Insert(item)
+func collect(item):
+	inventory_data.Insert(item)
 
 func get_gravity(_velocity: Vector2):
 	if (_velocity.y < 0):

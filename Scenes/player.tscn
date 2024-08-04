@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Brewery/PotionNode.gd" id="1_esuby"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerActor.gd" id="1_iiw3q"]
 [ext_resource type="Texture2D" uid="uid://cmop7521mralf" path="res://Assets/Sprites/Player/Player-Movement.png" id="2_3s3pf"]
-[ext_resource type="Resource" uid="uid://xmkh8o7yllsa" path="res://InventoryItems/PlayerInventory.tres" id="2_cw4lf"]
+[ext_resource type="Resource" uid="uid://c1xsd43rkwq4" path="res://InventoryItems/test_inv.tres" id="2_axyi7"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/StateMachine.gd" id="3_5c4cm"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/IdleState.gd" id="4_33fco"]
 [ext_resource type="Script" path="res://Scripts/Player/Statemachine/States/MoveState.gd" id="5_kbtyb"]
@@ -221,7 +221,7 @@ _data = {
 [node name="PlayerActor" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_iiw3q")
-inventory_data = ExtResource("2_cw4lf")
+inventory_data = ExtResource("2_axyi7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -8.25)

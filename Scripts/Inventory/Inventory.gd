@@ -1,26 +1,23 @@
-extends Resource
+extends PanelContainer
 
-class_name Inv
+const Slot = preload("res://Scenes/slot.tscn")
 
-signal update
+@onready var item_grid: GridContainer = $MarginContainer/ItemGrid
 
-@export var Slots: Array[InvSlot]
+func set_inventory_data(inventory_data: InventoryData) ->void:
+	inventory_data.inventory_updated.connect(populate_item_grid)
+	populate_item_grid(inventory_data)
 
-func Insert(item: InvItem):
-	var itemslots = Slots.filter(func(slot): return slot.item == item)
-	if !itemslots.is_empty():
-		itemslots[0].amount += 1
-	else:
-		var emptyslots = Slots.filter(func(slot): return slot.item == null)
-		if !emptyslots.is_empty():
-			emptyslots[0].item = item
-			emptyslots[0].amount = 1
-	update.emit()
 
-func clear():
-	for slot in Slots:
-		slot.item = null
-		slot.amount = 0
-	update.emit()
+func populate_item_grid(inventory_data: InventoryData) -> void:
+		for child in item_grid.get_children():
+			child.queue_free()
 
-#Add to player later
+		for slot_data in inventory_data.slot_datas:
+			var slot = Slot.instantiate()
+			item_grid.add_child(slot)
+
+			slot.slot_clicked.connect(inventory_data.on_slot_clicked)
+
+			if slot_data:
+				slot.set_slot_data(slot_data)	

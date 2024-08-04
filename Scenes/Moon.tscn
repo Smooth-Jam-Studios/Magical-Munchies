@@ -1,13 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://yfifrsbm7dai"]
+[gd_scene load_steps=8 format=3 uid="uid://yfifrsbm7dai"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/PickUp.gd" id="1_wpk1g"]
+[ext_resource type="Script" path="res://Scripts/Inventory/slot_data.gd" id="2_nojq2"]
+[ext_resource type="Script" path="res://Scripts/Inventory/item_data.gd" id="2_u211v"]
 [ext_resource type="Texture2D" uid="uid://c0ujqqsac3uq3" path="res://Assets/Sprites/Inventory/MoonCrystal-sheet.png" id="3_lqfrs"]
+
+[sub_resource type="Resource" id="Resource_pw1aw"]
+script = ExtResource("2_u211v")
+name = ""
+
+[sub_resource type="Resource" id="Resource_4qcvw"]
+script = ExtResource("2_nojq2")
+item_data = SubResource("Resource_pw1aw")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1guo4"]
 radius = 11.1803
 
 [node name="MoonPickup" type="StaticBody2D"]
 script = ExtResource("1_wpk1g")
+slot_data = SubResource("Resource_4qcvw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_lqfrs")

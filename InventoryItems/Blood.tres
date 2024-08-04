@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bckky571ta418"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bckky571ta418"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory/NewInventory/InventoryItem.gd" id="1_tdul2"]
+[ext_resource type="Script" path="res://Scripts/Inventory/item_data.gd" id="1_1wtdt"]
 [ext_resource type="Texture2D" uid="uid://tj8dlofu71vk" path="res://Assets/Sprites/Inventory/BloodDrop.png" id="2_yiume"]
 
 [resource]
-script = ExtResource("1_tdul2")
+script = ExtResource("1_1wtdt")
 name = "Blood"
 texture = ExtResource("2_yiume")
