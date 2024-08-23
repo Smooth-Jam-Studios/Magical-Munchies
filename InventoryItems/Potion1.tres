@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://bq6kbiewrqr15"]
+
+[ext_resource type="Resource" uid="uid://bckky571ta418" path="res://InventoryItems/Blood.tres" id="1_x27ss"]
+[ext_resource type="Resource" uid="uid://4hcjyktdwq4r" path="res://InventoryItems/DragonScale.tres" id="2_4fj01"]
+[ext_resource type="Script" path="res://Scripts/Inventory/item_data.gd" id="3_awonk"]
+[ext_resource type="Texture2D" uid="uid://dm6wqasaeg7q0" path="res://Assets/Sprites/Inventory/Essence of rain.png" id="4_rk2yx"]
+
+[resource]
+script = ExtResource("3_awonk")
+name = "Potion1"
+texture = ExtResource("4_rk2yx")
+recipe = Array[ExtResource("3_awonk")]([ExtResource("1_x27ss"), ExtResource("2_4fj01")])

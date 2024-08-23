@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs4dbaucd578n"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/crafting.gd" id="1_gy7e8"]
+[ext_resource type="Texture2D" uid="uid://dy4q1yvbuvpoh" path="res://Assets/Sprites/Inventory/thunder bug.png" id="4_nar5b"]
+
+[node name="HBoxContainer" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gy7e8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="ItemGrid" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ItemGrid"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_nar5b")

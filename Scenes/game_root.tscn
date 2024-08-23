@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://vr7esau50v3c" path="res://Assets/Sprites/Inventory/unicorn hair.png" id="10_4ovjm"]
 [ext_resource type="Texture2D" uid="uid://dy4q1yvbuvpoh" path="res://Assets/Sprites/Inventory/thunder bug.png" id="11_c2ic3"]
 [ext_resource type="Texture2D" uid="uid://bh8pmo08wqg3g" path="res://Assets/Sprites/Inventory/essene of yeast.png" id="12_0ohqg"]
-[ext_resource type="PackedScene" uid="uid://c3dfw6vk2w0pr" path="res://Scenes/CraftingUI.tscn" id="12_jlbok"]
+[ext_resource type="PackedScene" uid="uid://c3dfw6vk2w0pr" path="res://Scenes/CraftingUI.tscn" id="12_jh1w0"]
 [ext_resource type="Texture2D" uid="uid://8xng3tq2llv2" path="res://Assets/Sprites/Inventory/dragon scale.png" id="13_mwf4l"]
 [ext_resource type="Script" path="res://Scripts/Inventory/slot_data.gd" id="14_kolqk"]
 [ext_resource type="Texture2D" uid="uid://evfny382bht8" path="res://Assets/Sprites/Inventory/nightshade berries.png" id="14_vvlhi"]
@@ -230,13 +230,13 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 
-[node name="ExternalInventory" parent="UI/InventoryInterface" instance=ExtResource("12_jlbok")]
+[node name="ExternalInventory" parent="UI/InventoryInterface" instance=ExtResource("12_jh1w0")]
 visible = false
 layout_mode = 0
-offset_left = 497.0
-offset_top = 215.0
-offset_right = 537.0
-offset_bottom = 255.0
+offset_left = 553.0
+offset_top = 410.0
+offset_right = 701.0
+offset_bottom = 490.0
 
 [node name="New Pickup" type="Node" parent="."]
 

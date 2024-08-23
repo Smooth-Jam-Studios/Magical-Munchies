@@ -3,7 +3,15 @@ extends PanelContainer
 const Slot = preload("res://Scenes/slot.tscn")
 
 @onready var item_grid: GridContainer = $MarginContainer/ItemGrid
+@onready var craft: Button = $MarginContainer/ItemGrid/craft
+@export var item: ItemData = null
+# # @onready var recipe = item.recipe 
 
+# # func _ready():
+# # 	craft.icon = item.texture
+ 
+# # 	for i in range(recipe.size()):
+# # 		get_child(i).item = recipe[i]
 
 func set_inventory_data(inventory_data: InventoryData) ->void:
 	inventory_data.inventory_updated.connect(populate_item_grid)
